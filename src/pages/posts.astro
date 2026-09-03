@@ -1,0 +1,134 @@
+---
+import { siteData } from '../data/site';
+
+const posts = [...siteData.news].sort((a, b) => b.date.localeCompare(a.date));
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={`${siteData.name}の活動記録`} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <title>Posts | {siteData.name}</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="/" aria-label={`${siteData.name} トップ`}>
+          <span class="brand-mark">M</span>
+          <span class="brand-copy"><strong>{siteData.name}</strong><small>{siteData.nameEn}</small></span>
+        </a>
+        <nav aria-label="メインナビゲーション">
+          <a href="/#about">About</a>
+          <a href="/research/">Research</a>
+          <a href="/#projects">Themes</a>
+          <a href="/#members">Members</a>
+          <a aria-current="page" href="/posts/">Posts</a>
+          <a class="nav-contact" href="/#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="grid" aria-hidden="true"></div>
+        <div class="orb orb-blue" aria-hidden="true"></div>
+        <div class="orb orb-yellow" aria-hidden="true"></div>
+        <div class="shell hero-inner">
+          <p>ACTIVITY / ARCHIVE</p>
+          <h1>Posts</h1>
+          <div>三林研究室の研究・発表・日々の活動を、新しいものから掲載しています。</div>
+        </div>
+      </section>
+
+      <section class="posts-section">
+        <div class="shell">
+          <div class="posts-head"><span>Date</span><span>Category</span><span>Title</span></div>
+          <div class="posts-list">
+            {posts.map((post, index) => (
+              <article class="post-row">
+                <time datetime={post.date.replaceAll('.', '-')}>{post.date}</time>
+                <span class:list={['category', `category-${post.category.toLowerCase()}`]}>{post.category}</span>
+                <h2>{post.title}</h2>
+                <span class="number">{String(index + 1).padStart(2, '0')}</span>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="shell footer-inner"><strong>{siteData.name}</strong><span>{siteData.contact.email}</span></div>
+    </footer>
+  </body>
+</html>
+
+<style>
+  :root { --ink: #151515; --navy: #263752; --header: #e1e9f6; --line: #cbd2dc; --shell: 1200px; --sans: "Noto Sans JP", "DM Sans", sans-serif; --latin: "DM Sans", "Noto Sans JP", sans-serif; --mono: "IBM Plex Mono", "Noto Sans JP", monospace; }
+  * { box-sizing: border-box; }
+  html { background: #eef2f8; color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.75; }
+  body { margin: 0; }
+  a { color: inherit; text-decoration: none; }
+  .shell { width: min(calc(100% - 64px), var(--shell)); margin-inline: auto; }
+
+  .site-header { position: sticky; top: 0; z-index: 20; border-bottom: 1px solid #becbe0; background: rgba(225,233,246,.94); backdrop-filter: blur(12px); }
+  .header-inner { min-height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand-mark { display: grid; place-items: center; width: 38px; height: 38px; background: var(--navy); color: white; font: 800 20px/1 var(--latin); }
+  .brand-copy { display: flex; flex-direction: column; line-height: 1.15; }
+  .brand-copy strong { color: #1e2c43; font-size: 15px; }
+  .brand-copy small { margin-top: 4px; color: #66758c; font: 500 9px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; }
+  nav { display: flex; align-items: center; gap: 25px; font: 500 16px/1 var(--latin); }
+  nav a { color: #40516a; }
+  nav a:hover, nav a[aria-current="page"] { color: #14233a; }
+  nav a[aria-current="page"] { border-bottom: 1px solid #14233a; }
+  nav .nav-contact { padding: 13px 17px; border: 1px solid var(--navy); background: var(--navy); color: white; }
+
+  .page-hero { position: relative; min-height: 420px; overflow: hidden; background: linear-gradient(#f8f9fc, #eef2f8); }
+  .grid { position: absolute; inset: 0; opacity: .42; background-image: linear-gradient(#e4e8ef 1px, transparent 1px), linear-gradient(90deg, #e4e8ef 1px, transparent 1px); background-size: 72px 72px; }
+  .orb { position: absolute; border-radius: 50%; }
+  .orb-blue { width: 330px; height: 330px; right: 6%; top: 30px; background: rgba(191,211,255,.72); }
+  .orb-yellow { width: 210px; height: 210px; right: 23%; bottom: -50px; background: rgba(255,221,153,.62); }
+  .hero-inner { position: relative; z-index: 1; padding-top: 88px; }
+  .hero-inner > p { margin: 0 0 14px; color: #536ca9; font: 500 11px/1.4 var(--mono); letter-spacing: .1em; }
+  h1 { margin: 0; font: 500 clamp(58px, 7vw, 92px)/1 var(--latin); letter-spacing: -.055em; }
+  .hero-inner > div { max-width: 650px; margin-top: 30px; color: #515b68; font-size: 17px; }
+
+  .posts-section { padding: 88px 0 120px; background: #fff; }
+  .posts-head, .post-row { display: grid; grid-template-columns: 160px 130px minmax(0, 1fr) 48px; gap: 28px; align-items: center; }
+  .posts-head { padding: 0 18px 16px; color: #718096; font: 500 11px/1 var(--mono); text-transform: uppercase; }
+  .posts-list { border-top: 1px solid var(--line); }
+  .post-row { min-height: 112px; padding: 26px 18px; border-bottom: 1px solid var(--line); transition: background .2s, padding .2s; }
+  .post-row:hover { padding-inline: 28px; background: #f5f7fb; }
+  time, .number { color: #68768a; font: 500 12px/1 var(--mono); }
+  .category { width: max-content; padding: 6px 10px; background: #fff3bd; color: #3e4650; font: 500 11px/1 var(--mono); }
+  .category-project { background: #dce8fb; }
+  .category-member { background: #e3f2df; }
+  .category-paper { background: #f6dce3; }
+  .post-row h2 { margin: 0; font-size: clamp(16px, 1.5vw, 20px); font-weight: 600; line-height: 1.65; }
+  .number { justify-self: end; color: #9ba5b3; }
+
+  footer { padding: 36px 0; background: #151515; color: #b9c1ca; }
+  .footer-inner { display: flex; justify-content: space-between; gap: 24px; font-size: 13px; }
+
+  @media (max-width: 900px) { nav a:not(.nav-contact) { display: none; } }
+  @media (max-width: 640px) {
+    .shell { width: min(calc(100% - 32px), var(--shell)); }
+    .page-hero { min-height: 350px; }
+    .hero-inner { padding-top: 68px; }
+    .posts-section { padding: 60px 0 84px; }
+    .posts-head { display: none; }
+    .post-row { grid-template-columns: 1fr auto; gap: 12px 18px; padding: 24px 4px; }
+    .post-row:hover { padding-inline: 4px; }
+    .category { justify-self: end; }
+    .post-row h2 { grid-column: 1 / -1; }
+    .number { display: none; }
+    .footer-inner { flex-direction: column; gap: 4px; }
+  }
+</style>

@@ -1,0 +1,131 @@
+---
+import { siteData } from '../data/site';
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={`${siteData.name}の研究テーマ`} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <title>Research | {siteData.name}</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-bar"></div>
+      <div class="header-wrapper">
+        <a class="site-title" href="/">神戸大学 三林研究室</a>
+        <nav>
+          <a href="/#about">About</a>
+          <a href="/#members">Members</a>
+          <a href="/posts/">Posts</a>
+          <a href="/research/">Research</a>
+          <a href="/#contact">Contact Us</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page-content">
+      <article>
+        <header class="post-header"><h1>Research</h1></header>
+        <div class="post-content">
+          <p>三林研究室では、自然言語処理や情報検索を中心に、幅広いテーマで研究を行っています。</p>
+          <p>三林亮太の研究業績をもとに、現在取り組んでいるテーマを6つの領域に整理しています。</p>
+          <p>研究成果（Publications）は<a href="https://researchmap.jp/ryotamibayashi" target="_blank" rel="noopener noreferrer">三林のresearchmap</a>にまとめてあります。</p>
+
+          <h2>研究テーマ</h2>
+          <div class="research-topics">
+            {siteData.researchTopics.map((topic) => (
+              <details>
+                <summary>
+                  <span class="note-title">{topic.title}</span>
+                  <span class="note-click">Click</span>
+                  <img class="note-thumb" src={topic.image} alt="" loading="lazy" />
+                </summary>
+                <div class="topic-body">
+                  <p class="topic-question">{topic.question}</p>
+                  <p><strong>{topic.summary}</strong></p>
+                  {topic.body.map((paragraph) => <p>{paragraph}</p>)}
+                </div>
+              </details>
+            ))}
+          </div>
+
+        </div>
+      </article>
+    </main>
+
+    <footer><div class="footer-wrapper"><span>神戸大学 三林研究室</span><span>{siteData.contact.email}</span></div></footer>
+
+  </body>
+</html>
+
+<style>
+  * { box-sizing: border-box; }
+  html { background: #e8edf8; color: #151515; font-family: "Noto Sans JP", "DM Sans", sans-serif; font-size: 16px; line-height: 1.75; }
+  body { margin: 0; border-top: 4px solid #263752; background: #f5f7fb; }
+  a { color: #536ca9; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .site-header { position: relative; min-height: 64px; border-bottom: 1px solid #becbe0; background: rgba(225,233,246,.94); backdrop-filter: blur(12px); }
+  .header-wrapper { width: min(calc(100% - 64px), 1200px); min-height: 64px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+  .site-title { color: #1e2c43; font-size: 18px; font-weight: 700; letter-spacing: -.5px; }
+  .site-title:hover { text-decoration: none; }
+  nav { display: flex; gap: 25px; }
+  nav a { color: #40516a; font-family: "DM Sans", "Noto Sans JP", sans-serif; font-size: 16px; font-weight: 500; }
+  nav a:hover { color: #14233a; }
+
+  .page-content { position: relative; padding: 54px 0 100px; overflow: hidden; background: radial-gradient(circle at 88% 9%, rgba(191,211,255,.72) 0 170px, transparent 171px), radial-gradient(circle at 73% 18%, rgba(255,221,153,.55) 0 115px, transparent 116px), linear-gradient(#f8f9fc, #eef2f8); }
+  .page-content::before { content: ""; position: absolute; inset: 0; opacity: .38; pointer-events: none; background-image: linear-gradient(#e4e8ef 1px, transparent 1px), linear-gradient(90deg, #e4e8ef 1px, transparent 1px); background-size: 72px 72px; }
+  .page-content > article { width: min(calc(100% - 64px), 1200px); margin: 0 auto; }
+  .page-content > article { position: relative; z-index: 1; }
+  .post-header { margin-bottom: 26px; }
+  .post-header h1 { margin: 0; font-size: clamp(48px, 6vw, 76px); font-weight: 400; line-height: 1.2; letter-spacing: -2px; }
+  .post-content > p { max-width: 780px; margin: 0 0 18px; }
+  .post-content h2 { margin: 52px 0 28px; color: #1e2c43; font-size: clamp(36px, 4vw, 52px); font-weight: 500; line-height: 1.25; letter-spacing: -1px; }
+
+  .research-topics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; margin: 20px 0 45px; align-items: start; }
+  .research-topics details { position: relative; margin: 0; padding: 14px 12px; overflow: hidden; align-self: start; border: 1px solid rgba(0,0,0,.05); border-radius: 10px; background: #fffbd1; box-shadow: 0 10px 20px rgba(0,0,0,.06), 0 2px 6px rgba(0,0,0,.05); transform-origin: 50% 10%; transition: transform .2s, box-shadow .2s; }
+  .research-topics details:nth-child(4n+1) { background: #fffbd1; }
+  .research-topics details:nth-child(4n+2) { background: #e9ffd8; }
+  .research-topics details:nth-child(4n+3) { background: #ffe9ec; transform: rotate(-1.4deg); }
+  .research-topics details:nth-child(4n+4) { background: #eaf3ff; transform: rotate(1.8deg); }
+  .research-topics details[open] { transform: rotate(0); box-shadow: 0 14px 28px rgba(0,0,0,.1), 0 4px 10px rgba(0,0,0,.08); }
+  .research-topics details::before { content: ""; position: absolute; z-index: 2; top: -10px; left: 50%; width: 100px; height: 22px; border-radius: 4px; background: repeating-linear-gradient(45deg, rgba(255,255,255,.8) 0 6px, rgba(240,240,240,.8) 6px 12px); box-shadow: 0 3px 5px rgba(0,0,0,.08); transform: translateX(-50%) rotate(-2deg); pointer-events: none; }
+  .research-topics summary { display: grid; grid-template-columns: 1fr auto; grid-template-rows: auto auto; align-items: start; row-gap: 8px; margin: 0; padding: 0; cursor: pointer; list-style: none; }
+  .research-topics summary::-webkit-details-marker { display: none; }
+  .note-title { grid-column: 1/2; margin: 0; font-size: 17px; font-weight: 700; line-height: 1.4; }
+  .note-click { grid-column: 2/3; justify-self: end; padding: 2px 8px; border-radius: 999px; background: rgba(15,118,110,.07); color: #0f766e; font-size: 12px; white-space: nowrap; }
+  .note-thumb { grid-column: 1/3; display: block; width: 100%; aspect-ratio: 16/9; margin: 0; border-radius: 8px; background: #f2f5f9; object-fit: cover; opacity: .95; transition: opacity .25s, transform .25s; }
+  details:not([open]) .note-thumb { opacity: .9; transform: scale(.99); }
+  .topic-body { max-height: 0; margin-top: 10px; padding-top: 8px; overflow: hidden; border-top: 1px dashed rgba(0,0,0,.2); color: #333; font-size: 15px; opacity: 0; transform: translateY(-4px); transition: max-height .35s, opacity .25s, transform .25s; }
+  details[open] .topic-body { max-height: 1800px; opacity: 1; transform: translateY(0); }
+  .topic-body p { margin: 9px 0; }
+  .topic-question { padding: 9px 10px; background: rgba(255,255,255,.48); font-weight: 700; }
+  .topic-label { color: #0d47a1; font-weight: 700; }
+  .topic-body ul { margin: 6px 0 0 1.2em; padding: 0; }
+
+  footer { margin-top: 0; padding: 34px 0; border-top: 1px solid #263752; background: #151515; color: #b9c1ca; font-size: 13px; }
+  .footer-wrapper { width: min(calc(100% - 64px), 1200px); margin: 0 auto; display: flex; justify-content: space-between; }
+
+  @media (max-width: 1100px) {
+    .research-topics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 720px) {
+    .header-wrapper { min-height: 57px; }
+    .site-title { font-size: 21px; }
+    nav { display: none; }
+    .page-content { padding-top: 36px; }
+    .page-content > article, .header-wrapper, .footer-wrapper { width: min(calc(100% - 32px), 1200px); }
+    .post-header h1 { font-size: 42px; }
+    .post-content h2 { margin-top: 31px; font-size: 35px; }
+    .research-topics { grid-template-columns: 1fr; gap: 38px; }
+    .research-topics details:nth-child(n) { transform: none; }
+    .note-title { font-size: 15px; }
+    .footer-wrapper { flex-direction: column; gap: 5px; }
+  }
+</style>
