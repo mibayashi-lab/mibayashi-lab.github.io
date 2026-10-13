@@ -2,6 +2,10 @@
 import { siteData } from '../data/site';
 
 const currentYear = new Date().getFullYear();
+const memberGroups = [
+  { title: '教員', titleEn: 'Faculty', members: siteData.members.filter((member) => member.role === 'Principal Investigator') },
+  { title: '学生', titleEn: 'Students', members: siteData.members.filter((member) => member.role.startsWith('Student')) },
+];
 ---
 
 <!doctype html>
@@ -142,21 +146,31 @@ const currentYear = new Date().getFullYear();
           <header class="section-head">
             <div class="section-label"><span>03</span><h2>Members</h2></div>
           </header>
-          <div class="member-grid">
-            {siteData.members.map((member, index) => (
-              <article class="member-card">
-                <div class="member-image-wrap">
-                  <img src={member.image} alt={`${member.name}のプロフィール画像`} loading="lazy" />
-                  <span>{member.role}</span>
+          <div class="member-groups">
+            {memberGroups.map((group) => (
+              <section class="member-group" aria-labelledby={`member-${group.titleEn.toLowerCase()}`}>
+                <header class="member-subhead" id={`member-${group.titleEn.toLowerCase()}`}>
+                  <span>{group.titleEn}</span>
+                  <h3>{group.title}</h3>
+                </header>
+                <div class="member-grid">
+                  {group.members.map((member) => (
+                    <article class="member-card">
+                      <div class="member-image-wrap">
+                        <img src={member.image} alt={`${member.name}のプロフィール画像`} loading="lazy" />
+                        <span>{member.role}</span>
+                      </div>
+                      <div class="member-copy">
+                        <p>{member.position}</p>
+                        <h3>{member.name}</h3>
+                        <span>{member.nameEn}</span>
+                        <div class="member-comment">{member.comment}</div>
+                        {'profile' in member && <a href={member.profile} target="_blank" rel="noopener noreferrer">researchmap ↗</a>}
+                      </div>
+                    </article>
+                  ))}
                 </div>
-                <div class="member-copy">
-                  <p>{member.position}</p>
-                  <h3>{member.name}</h3>
-                  <span>{member.nameEn}</span>
-                  <div class="member-comment">{member.comment}</div>
-                  {index === 0 && <a href={member.profile} target="_blank" rel="noopener noreferrer">researchmap ↗</a>}
-                </div>
-              </article>
+              </section>
             ))}
           </div>
         </div>
@@ -282,6 +296,10 @@ const currentYear = new Date().getFullYear();
   .project-description { grid-column: 2; color: #687177; font-size: 13px; }
 
   .soft-section { background: #e8e9e4; }
+  .member-groups { display: grid; gap: 58px; }
+  .member-subhead { display: flex; align-items: baseline; gap: 14px; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+  .member-subhead span { color: #687177; font: 500 10px/1 var(--mono); text-transform: uppercase; letter-spacing: .08em; }
+  .member-subhead h3 { margin: 0; font-size: 20px; line-height: 1.2; }
   .member-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
   .member-card { background: var(--paper); border: 1px solid var(--line); }
   .member-image-wrap { position: relative; aspect-ratio: 1; overflow: hidden; background: white; }

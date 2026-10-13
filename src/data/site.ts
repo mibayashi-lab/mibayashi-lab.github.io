@@ -171,14 +171,6 @@ export const siteData = {
       comment: '自然言語処理・情報検索・創造的テキスト生成を研究しています。',
     },
     {
-      role: 'Lab Member',
-      name: 'どせいさん貯金箱',
-      nameEn: 'Doseisan Bank',
-      position: '会計係',
-      image: '/images/member-doseisan.jpg',
-      comment: '三林研で生まれた半端な小銭を貯めています。',
-    },
-    {
       role: 'Student / 2026',
       name: '小西 奏夢',
       nameEn: 'Kanamu Konishi',
