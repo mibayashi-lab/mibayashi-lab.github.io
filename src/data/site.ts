@@ -228,7 +228,7 @@ export const siteData = {
   contact: {
     campus: '神戸大学 鶴甲第1キャンパス',
     address: '〒657-0011 兵庫県神戸市灘区鶴甲1丁目',
-    email: 'mibayashi[at]people.kobe-u.ac.jp',
+    email: 'mibayashi🐻people.kobe-u.ac.jp',
   },
   links: [
     { label: '神戸大学', url: 'https://www.kobe-u.ac.jp/' },
