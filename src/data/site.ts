@@ -173,7 +173,7 @@ export const siteData = {
     {
       role: 'Student / 2026',
       name: '小西 奏夢',
-      nameEn: 'Kanamu Konishi',
+      nameEn: 'Sora Konishi',
       position: '学部3年',
       image: '/images/member-konishi.jpg',
       comment: 'ただの阪神ファン。',
@@ -181,7 +181,7 @@ export const siteData = {
     {
       role: 'Student / 2026',
       name: '小林 稜月',
-      nameEn: 'Kobayashi',
+      nameEn: 'Izuki Kobayashi',
       position: '学部3年',
       image: '/images/member-kobayashi.jpg',
       comment: 'INFP系エンターテイナー。',
