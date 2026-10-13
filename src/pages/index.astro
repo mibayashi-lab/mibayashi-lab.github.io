@@ -141,7 +141,6 @@ const currentYear = new Date().getFullYear();
         <div class="shell">
           <header class="section-head">
             <div class="section-label"><span>03</span><h2>Members</h2></div>
-            <p>メンバー情報は `before_site` の2025年8月時点の記録をもとにしています。</p>
           </header>
           <div class="member-grid">
             {siteData.members.map((member, index) => (
@@ -283,17 +282,17 @@ const currentYear = new Date().getFullYear();
   .project-description { grid-column: 2; color: #687177; font-size: 13px; }
 
   .soft-section { background: #e8e9e4; }
-  .member-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .member-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
   .member-card { background: var(--paper); border: 1px solid var(--line); }
   .member-image-wrap { position: relative; aspect-ratio: 1; overflow: hidden; background: white; }
   .member-image-wrap img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.8); transition: filter .25s, transform .35s; }
   .member-card:hover img { filter: saturate(1); transform: scale(1.02); }
   .member-image-wrap span { position: absolute; left: 12px; top: 12px; padding: 6px 8px; background: var(--ink); color: white; font: 500 9px/1 var(--mono); text-transform: uppercase; }
-  .member-copy { padding: 22px; }
+  .member-copy { padding: 17px; }
   .member-copy > p { margin: 0 0 6px; color: #687177; font-size: 11px; }
-  .member-copy h3 { display: inline; margin: 0; font-size: 20px; }
+  .member-copy h3 { display: inline; margin: 0; font-size: 18px; }
   .member-copy > span { margin-left: 8px; color: #7a8388; font: 400 10px/1 var(--mono); }
-  .member-comment { min-height: 50px; margin-top: 15px; color: #5c666b; font-size: 12px; }
+  .member-comment { min-height: 42px; margin-top: 12px; color: #5c666b; font-size: 12px; }
   .member-copy a { display: inline-block; margin-top: 15px; border-bottom: 1px solid var(--ink); font: 500 11px/1.6 var(--mono); }
 
   .news-list { border-top: 1px solid var(--line); }
@@ -328,6 +327,10 @@ const currentYear = new Date().getFullYear();
     .research-description, .research-item ul { grid-column: 2; justify-content: flex-start; }
     .member-grid { grid-template-columns: 1fr 1fr; }
     .contact-grid { grid-template-columns: 1fr; gap: 58px; }
+  }
+
+  @media (min-width: 901px) and (max-width: 1100px) {
+    .member-grid { grid-template-columns: repeat(3, 1fr); }
   }
 
   @media (max-width: 620px) {
