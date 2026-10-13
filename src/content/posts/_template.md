@@ -16,3 +16,6 @@ draft: true
 - 項目2
 
 [リンクの文字](https://example.com/)
+
+<!-- 画像を載せる場合（画像は public/images/posts にアップロード） -->
+![画像の説明](/images/posts/画像ファイル名.jpg)
