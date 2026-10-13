@@ -110,7 +110,11 @@ const formatPostDate = (date: Date) => date.toISOString().slice(0, 10);
   .post-row { min-height: 112px; padding: 26px 18px; border-bottom: 1px solid var(--line); transition: background .2s, padding .2s; }
   .post-row:hover { padding-inline: 28px; background: #f5f7fb; }
   time, .number { color: #68768a; font: 500 12px/1 var(--mono); }
-  .category { width: max-content; padding: 6px 10px; background: #fff3bd; color: #333; font: 500 11px/1 var(--mono); }
+  .category { width: max-content; padding: 6px 10px; background: var(--category-bg, #fff3bd); color: #333; font: 500 11px/1 var(--mono); }
+  .category-paper { --category-bg: #f6dce3; }
+  .category-project { --category-bg: #dce8fb; }
+  .category-member { --category-bg: #e3f2df; }
+  .category-award { --category-bg: #f7dfc2; }
   .post-row h2 { margin: 0; font-size: clamp(16px, 1.5vw, 20px); font-weight: 600; line-height: 1.65; }
   .number { justify-self: end; color: #9ba5b3; }
 

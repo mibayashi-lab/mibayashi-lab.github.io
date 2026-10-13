@@ -45,7 +45,7 @@ const postDate = post.data.date.toISOString().slice(0, 10);
       <article class="post shell">
         <a class="back" href="/posts/">← Posts</a>
         <header class="post-header">
-          <div><time datetime={postDate}>{postDate.replaceAll('-', '.')}</time><span>{post.data.category}</span></div>
+          <div><time datetime={postDate}>{postDate.replaceAll('-', '.')}</time><span class:list={['category', `category-${post.data.category.toLowerCase()}`]}>{post.data.category}</span></div>
           <h1>{post.data.title}</h1>
           {post.data.summary && <p>{post.data.summary}</p>}
         </header>
@@ -80,7 +80,11 @@ const postDate = post.data.date.toISOString().slice(0, 10);
   .post-header { padding-bottom:42px; border-bottom:1px solid var(--line); }
   .post-header > div { display:flex; gap:18px; align-items:center; }
   time { color:#68768a; font:500 12px/1 var(--mono); }
-  .post-header span { padding:6px 10px; background:#fff3bd; font:500 11px/1 var(--mono); }
+  .post-header span { padding:6px 10px; background:var(--category-bg,#fff3bd); font:500 11px/1 var(--mono); }
+  .category-paper { --category-bg:#f6dce3; }
+  .category-project { --category-bg:#dce8fb; }
+  .category-member { --category-bg:#e3f2df; }
+  .category-award { --category-bg:#f7dfc2; }
   h1 { max-width:850px; margin:26px 0 20px; font-size:clamp(34px,5vw,62px); line-height:1.35; letter-spacing:-.04em; }
   .post-header p { max-width:720px; margin:0; color:#566171; font-size:17px; }
   .post-content { max-width:760px; padding:44px 0; font-size:17px; }

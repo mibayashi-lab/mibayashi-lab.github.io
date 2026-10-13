@@ -77,7 +77,7 @@ const memberGroups = [
             {latestPosts.map((post) => (
               <article class="news-item">
                 <time datetime={formatPostDate(post.data.date)}>{formatPostDate(post.data.date).replaceAll('-', '.')}</time>
-                <span>{post.data.category}</span>
+                <span class:list={['category', `category-${post.data.category.toLowerCase()}`]}>{post.data.category}</span>
                 <h3><a href={`/posts/${post.id}/`}>{post.data.title}</a></h3>
               </article>
             ))}
@@ -408,7 +408,11 @@ const memberGroups = [
   .news .section-label span { color: #536ca9; }
   .news-list { border-top-color: #cfd4dd; }
   .news-item { border-bottom-color: #cfd4dd; }
-  .news-item span { color: #333; background: #fff3bd; border: 0; }
+  .news-item span { color: #333; background: var(--category-bg, #fff3bd); border: 0; }
+  .category-paper { --category-bg: #f6dce3; }
+  .category-project { --category-bg: #dce8fb; }
+  .category-member { --category-bg: #e3f2df; }
+  .category-award { --category-bg: #f7dfc2; }
 
   .about { background: #fff; }
   .about .section-label span { color: #b65e76; }
