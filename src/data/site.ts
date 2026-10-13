@@ -2,8 +2,8 @@ export const siteData = {
   name: '三林研究室',
   nameEn: 'Mibayashi Lab.',
   affiliation: '神戸大学 大学院国際文化学研究科',
-  tagline: '言葉を理解し、探し、創り出す。',
-  taglineEn: 'Understand, retrieve, and create with language.',
+  tagline: '神戸大学 三林研究室',
+  taglineEn: 'Mibayashi Laboratory, Kobe University',
   introduction:
     '三林研究室では、コンピュータが社会において人々により豊かな経験や価値をもたらす技術の研究をおこなっています。自然言語処理や情報検索を中心に、音楽情報処理やヒューマン・コンピュータ・インタラクションなど、情報科学の幅広い知見を活用します。',
   research: [
