@@ -80,22 +80,8 @@ export const siteData = {
       image: '/images/research-theme-model-retrieval.webp',
     },
     {
-      id: 'human-ai-expression',
-      number: '04',
-      label: 'Generative Art',
-      title: '手書き文字・書道作品の生成',
-      question: '文字の内容と書風を扱いながら、人の好みに合う表現を生成できるか？',
-      summary: '文字種とスタイルの特徴、人の選好フィードバック、レイアウト予測を組み合わせて日本語の文字表現を生成します。',
-      body: [
-        '創作支援では、単にもっともらしい出力を作るだけでなく、利用者が選び、比較し、意図を反映できることが重要です。人の選好フィードバックを利用した手書き文字生成や、内容と書風を分離した書道文字生成を研究しています。',
-        '一文字の生成だけでなく、文字のゆれや配置を含む書道作品全体の生成へ広げ、表現としての一貫性と多様性を探究します。',
-      ],
-      examples: ['人の選好フィードバックに基づく日本語手書き文字生成', '内容と書風を符号化する日本語書道文字生成', '学習者のアノテーション差異を発見する視覚分析'],
-      image: '/images/research-theme-handwriting.webp',
-    },
-    {
       id: 'museum-ai',
-      number: '05',
+      number: '04',
       label: 'Cultural Computing',
       title: '博物館・文化資源を理解するAI',
       question: '文化財に固有の文脈や、外観に潜む意外な特徴をAIで捉えられるか？',
@@ -109,7 +95,7 @@ export const siteData = {
     },
     {
       id: 'human-ai-support',
-      number: '06',
+      number: '05',
       label: 'Human–AI Interaction',
       title: '対話による学習・視点獲得支援',
       question: 'AIとの対話や可視化は、人が異なる視点を得て考えを深める助けになるか？',
@@ -140,12 +126,6 @@ export const siteData = {
       title: '事前学習済みモデルと情報の検索',
       description: '推論結果や近傍関係を手がかりに、追加学習なしで目的に合うBERTモデルや情報を見つける検索技術を探究します。',
       image: '/images/research-theme-model-retrieval.webp',
-    },
-    {
-      year: 'GENERATIVE ART',
-      title: '手書き文字・書道作品の生成',
-      description: '文字種と書風の分離、人の選好フィードバック、自動レイアウトを組み合わせ、人らしく多様な日本語文字表現を生成します。',
-      image: '/images/research-theme-handwriting.webp',
     },
     {
       year: 'CULTURAL COMPUTING',
