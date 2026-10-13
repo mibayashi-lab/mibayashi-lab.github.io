@@ -203,28 +203,6 @@ export const siteData = {
       comment: '海とスノーボードと料理が好きです。',
     },
   ],
-  news: [
-    {
-      date: '2025.08.01',
-      category: 'BLOG',
-      title: '「バタバタ」を更新しました。',
-    },
-    {
-      date: '2025.07.23',
-      category: 'PROJECT',
-      title: '令和7年度の覚醒プロジェクトに採択されました。',
-    },
-    {
-      date: '2025.07.01',
-      category: 'MEMBER',
-      title: '三林亮太が産業技術総合研究所 人工知能研究センターの招聘研究員になりました（兼任）。',
-    },
-    {
-      date: '2025.06.01',
-      category: 'PAPER',
-      title: 'NICOGRAPH International 2025に論文が採録されました（共著）。',
-    },
-  ],
   contact: {
     campus: '神戸大学 鶴甲第1キャンパス',
     address: '〒657-0011 兵庫県神戸市灘区鶴甲1丁目',

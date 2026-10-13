@@ -1,7 +1,12 @@
 ---
 import { siteData } from '../data/site';
+import { getCollection } from 'astro:content';
 
 const currentYear = new Date().getFullYear();
+const latestPosts = (await getCollection('posts', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 4);
+const formatPostDate = (date: Date) => date.toISOString().slice(0, 10);
 const memberGroups = [
   { title: '教員', titleEn: 'Faculty', members: siteData.members.filter((member) => member.role === 'Principal Investigator') },
   { title: '学生', titleEn: 'Students', members: siteData.members.filter((member) => member.role.startsWith('Student')) },
@@ -69,11 +74,11 @@ const memberGroups = [
         <div class="shell section-grid">
           <header class="section-label"><span>NEWS</span><h2>News</h2></header>
           <div class="news-list">
-            {siteData.news.map((item) => (
+            {latestPosts.map((post) => (
               <article class="news-item">
-                <time datetime={item.date.replaceAll('.', '-')}>{item.date}</time>
-                <span>{item.category}</span>
-                <h3>{item.title}</h3>
+                <time datetime={formatPostDate(post.data.date)}>{formatPostDate(post.data.date).replaceAll('-', '.')}</time>
+                <span>{post.data.category}</span>
+                <h3><a href={`/posts/${post.id}/`}>{post.data.title}</a></h3>
               </article>
             ))}
           </div>

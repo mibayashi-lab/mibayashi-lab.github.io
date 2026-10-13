@@ -1,7 +1,10 @@
 ---
 import { siteData } from '../data/site';
+import { getCollection } from 'astro:content';
 
-const posts = [...siteData.news].sort((a, b) => b.date.localeCompare(a.date));
+const posts = (await getCollection('posts', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const formatPostDate = (date: Date) => date.toISOString().slice(0, 10);
 ---
 
 <!doctype html>
@@ -52,9 +55,9 @@ const posts = [...siteData.news].sort((a, b) => b.date.localeCompare(a.date));
           <div class="posts-list">
             {posts.map((post, index) => (
               <article class="post-row">
-                <time datetime={post.date.replaceAll('.', '-')}>{post.date}</time>
-                <span class:list={['category', `category-${post.category.toLowerCase()}`]}>{post.category}</span>
-                <h2>{post.title}</h2>
+                <time datetime={formatPostDate(post.data.date)}>{formatPostDate(post.data.date).replaceAll('-', '.')}</time>
+                <span class:list={['category', `category-${post.data.category.toLowerCase()}`]}>{post.data.category}</span>
+                <h2><a href={`/posts/${post.id}/`}>{post.data.title}</a></h2>
                 <span class="number">{String(index + 1).padStart(2, '0')}</span>
               </article>
             ))}
