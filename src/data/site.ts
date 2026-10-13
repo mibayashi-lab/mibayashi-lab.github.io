@@ -167,7 +167,7 @@ export const siteData = {
       nameEn: 'Ryota Mibayashi',
       position: '助教',
       profile: 'https://researchmap.jp/ryotamibayashi',
-      image: '/images/member-ryota-mibayashi-v2.webp',
+      image: '/images/member-ryota-mibayashi-v3.webp',
       comment: '自然言語処理・情報検索・創造的テキスト生成を研究しています。',
     },
     {
