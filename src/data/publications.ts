@@ -50,7 +50,7 @@ const classify = (paper: NonNullable<ResearchmapPaper['merge']>): PublicationTyp
   if (paper.published_paper_type === 'international_conference_proceedings') {
     return 'conference';
   }
-  return 'domestic-conference';
+  return 'conference';
 };
 
 const formatVenue = (paper: NonNullable<ResearchmapPaper['merge']>) => {
