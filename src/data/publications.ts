@@ -13,6 +13,9 @@ export type Publication = {
   title: string;
   authors: string;
   venue: string;
+  venueGroup: string;
+  publicationDate: string;
+  firstAuthorMibayashi: boolean;
   year: number;
   type: PublicationType;
   refereed: boolean;
@@ -75,6 +78,9 @@ const parsePaper = (record: ResearchmapPaper): Publication | null => {
     title,
     authors: authors.map((author) => author.name).join(', '),
     venue: formatVenue(paper),
+    venueGroup: text(paper.publication_name),
+    publicationDate: date,
+    firstAuthorMibayashi: /三林|mibayashi/i.test(authors[0]?.name ?? ''),
     year: Number(date.slice(0, 4)),
     type: record.insert?.type === 'misc' ? 'domestic-conference' : classify(paper),
     refereed: paper.referee === true,
@@ -88,7 +94,12 @@ export const publications = latestResearchmapSource
   .split('\n')
   .map((line) => parsePaper(JSON.parse(line) as ResearchmapPaper))
   .filter((publication): publication is Publication => publication !== null)
-  .sort((a, b) => b.year - a.year || a.title.localeCompare(b.title));
+  .sort((a, b) =>
+    b.publicationDate.localeCompare(a.publicationDate)
+    || a.venueGroup.localeCompare(b.venueGroup)
+    || Number(b.firstAuthorMibayashi) - Number(a.firstAuthorMibayashi)
+    || a.title.localeCompare(b.title),
+  );
 
 export const publicationGroups = [
   { key: 'journal', title: '論文誌' },
