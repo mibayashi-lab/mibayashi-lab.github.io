@@ -107,8 +107,8 @@ const formatPostDate = (date: Date) => date.toISOString().slice(0, 10);
   .posts-head, .post-row { display: grid; grid-template-columns: 160px 130px minmax(0, 1fr); gap: 28px; align-items: center; }
   .posts-head { padding: 0 18px 16px; color: #718096; font: 500 11px/1 var(--mono); text-transform: uppercase; }
   .posts-list { border-top: 1px solid var(--line); }
-  .post-row { min-height: 112px; padding: 26px 18px; border-bottom: 1px solid var(--line); transition: background .2s, padding .2s; }
-  .post-row:hover { padding-inline: 28px; background: #f5f7fb; }
+  .post-row { min-height: 112px; padding: 26px 18px; border-bottom: 1px solid var(--line); transition: background .2s; }
+  .post-row:hover { background: #f5f7fb; }
   time { color: #68768a; font: 500 12px/1 var(--mono); }
   .category { width: max-content; padding: 6px 10px; background: var(--category-bg, #fff3bd); color: #333; font: 500 11px/1 var(--mono); }
   .category-paper { --category-bg: #f6dce3; }
@@ -128,7 +128,6 @@ const formatPostDate = (date: Date) => date.toISOString().slice(0, 10);
     .posts-section { padding: 60px 0 84px; }
     .posts-head { display: none; }
     .post-row { grid-template-columns: 1fr auto; gap: 12px 18px; padding: 24px 4px; }
-    .post-row:hover { padding-inline: 4px; }
     .category { justify-self: end; }
     .post-row h2 { grid-column: 1 / -1; }
     .footer-inner { flex-direction: column; gap: 4px; }
