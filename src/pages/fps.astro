@@ -8,7 +8,7 @@ import { siteData } from '../data/site';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={`${siteData.name}の学生募集・進学希望者向け情報`} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/jpeg" href="/images/fav.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -23,32 +23,38 @@ import { siteData } from '../data/site';
         </a>
         <nav aria-label="メインナビゲーション">
           <a href="/#about">About</a>
-          <a href="/#projects">Themes</a>
+          <a href="/#research">Research</a>
           <a href="/#members">Members</a>
           <a href="/publications/">Publications</a>
           <a href="/posts/">Posts</a>
-          <a aria-current="page" href="/fps/">For Students</a>
-          <a href="/#contact">Contact Us</a>
+          <a href="/fps/">For Students</a>
+          <a class="nav-contact" href="/#contact">Contact</a>
         </nav>
       </div>
     </header>
 
-    <main class="page-content">
-      <article>
-        <header class="post-header">
-          <p class="eyebrow">For prospective students</p>
-          <h1>学生募集</h1>
-          <p class="lead">三林研究室への所属・進学を検討している学生の方へ</p>
-        </header>
+    <main>
+      <section class="page-hero">
+        <div class="grid" aria-hidden="true"></div>
+        <div class="orb orb-blue" aria-hidden="true"></div>
+        <div class="orb orb-yellow" aria-hidden="true"></div>
+        <div class="shell hero-inner">
+          <p>FOR PROSPECTIVE STUDENTS</p>
+          <h1>For Students</h1>
+          <div>三林研究室への所属・進学を検討している学生の方へ</div>
+        </div>
+      </section>
 
-        <nav class="contents-nav" aria-label="ページ内目次">
+      <section class="fps-section">
+        <div class="shell">
+          <nav class="contents-nav" aria-label="ページ内目次">
           <a href="#undergraduate">Undergraduate Students</a>
           <a href="#graduate">Graduate Students</a>
           <a href="#research-student">Research Students</a>
           <a href="#contact">Contact</a>
-        </nav>
+          </nav>
 
-        <div class="placeholder-content">
+          <div class="placeholder-content">
           <section id="undergraduate">
             <p class="section-label">01</p>
             <h2>Undergraduate Students</h2>
@@ -69,8 +75,9 @@ import { siteData } from '../data/site';
             <h2>Contact</h2>
             <p>内容は後で追記します。</p>
           </section>
+          </div>
         </div>
-      </article>
+      </section>
     </main>
 
     <footer><div class="shell footer-inner"><strong>{siteData.name}</strong><span>{siteData.contact.email}</span></div></footer>
@@ -95,14 +102,18 @@ import { siteData } from '../data/site';
   nav { display: flex; align-items: center; gap: 28px; font: 500 18px/1 var(--latin); }
   nav a { color: #40516a; }
   nav a:hover, nav a[aria-current="page"] { color: #14233a; }
-  .page-content { position: relative; padding: 70px 0 110px; overflow: hidden; background: radial-gradient(circle at 88% 9%, rgba(191,211,255,.72) 0 170px, transparent 171px), radial-gradient(circle at 73% 18%, rgba(255,221,153,.55) 0 115px, transparent 116px), linear-gradient(#f8f9fc, #eef2f8); }
-  .page-content::before { content: ""; position: absolute; inset: 0; opacity: .38; pointer-events: none; background-image: linear-gradient(#e4e8ef 1px, transparent 1px), linear-gradient(90deg, #e4e8ef 1px, transparent 1px); background-size: 72px 72px; }
-  .page-content > article { position: relative; z-index: 1; width: min(calc(100% - 48px), 960px); margin: 0 auto; }
-  .post-header { max-width: 820px; margin-bottom: 42px; }
-  .eyebrow, .section-label { color: #536ca9; font-family: "IBM Plex Mono", monospace; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
-  .eyebrow { margin: 0 0 20px; }
-  h1 { margin: 0; color: #1e2c43; font-size: clamp(48px, 7vw, 88px); font-weight: 400; line-height: 1.1; letter-spacing: -3px; }
-  .lead { max-width: 680px; margin: 24px 0 0; font-size: 20px; }
+  nav a[aria-current="page"] { border-bottom: 1px solid #14233a; }
+  nav .nav-contact { padding: 12px 16px; border: 1px solid var(--navy); background: var(--navy); color: white; }
+  .page-hero { position: relative; min-height: 420px; overflow: hidden; background: linear-gradient(#f8f9fc, #eef2f8); }
+  .grid { position: absolute; inset: 0; opacity: .42; background-image: linear-gradient(#e4e8ef 1px, transparent 1px), linear-gradient(90deg, #e4e8ef 1px, transparent 1px); background-size: 72px 72px; }
+  .orb { position: absolute; border-radius: 50%; }
+  .orb-blue { width: 330px; height: 330px; right: 6%; top: 30px; background: rgba(191,211,255,.72); }
+  .orb-yellow { width: 210px; height: 210px; right: 23%; bottom: -50px; background: rgba(255,221,153,.62); }
+  .hero-inner { position: relative; z-index: 1; padding-top: 88px; }
+  .hero-inner > p { margin: 0 0 14px; color: #536ca9; font: 500 11px/1.4 var(--mono); letter-spacing: .1em; }
+  .hero-inner h1 { margin: 0; color: #151515; font: 500 clamp(58px, 7vw, 92px)/1 var(--latin); letter-spacing: -.055em; }
+  .hero-inner > div { max-width: 650px; margin-top: 30px; color: #515b68; font-size: 17px; }
+  .fps-section { padding: 88px 0 120px; background: #fff; }
   .contents-nav { justify-content: flex-start; flex-wrap: wrap; gap: 10px; margin: 0 0 72px; padding: 12px 0; border-top: 1px solid #bcc9dd; border-bottom: 1px solid #bcc9dd; }
   .contents-nav a { padding: 4px 12px; border: 1px solid #aebdd5; border-radius: 999px; color: #40516a; font-size: 13px; }
   .contents-nav a:hover { background: #e1e9f6; text-decoration: none; }
@@ -114,14 +125,14 @@ import { siteData } from '../data/site';
   .placeholder-content p:last-child { margin: 0; color: #69788e; }
   footer { padding: 34px 0; border-top: 1px solid #263752; background: #151515; color: #b9c1ca; font-size: 13px; }
   .footer-inner { display: flex; justify-content: space-between; }
-  @media (max-width: 720px) {
+  @media (max-width: 900px) { nav a:not(.nav-contact) { display: none; } }
+  @media (max-width: 640px) {
     .shell { width: min(calc(100% - 32px), var(--shell)); }
-    .page-content > article { width: min(calc(100% - 32px), 960px); }
+    .page-hero { min-height: 350px; }
+    .hero-inner { padding-top: 68px; }
     .header-inner { min-height: 64px; }
-    .site-header nav a:not(.nav-contact) { display: none; }
-    .page-content { padding-top: 42px; }
-    h1 { font-size: 52px; letter-spacing: -2px; }
-    .lead { font-size: 17px; }
+    .hero-inner h1 { font-size: 58px; letter-spacing: -.04em; }
+    .fps-section { padding: 60px 0 84px; }
     .contents-nav { margin-bottom: 54px; }
     .footer-inner { flex-direction: column; gap: 5px; }
   }
