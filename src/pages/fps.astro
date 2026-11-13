@@ -8,7 +8,7 @@ import { siteData } from '../data/site';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={`${siteData.name}の学生募集・進学希望者向け情報`} />
-    <link rel="icon" type="image/jpeg" href="/images/fav.jpg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -45,9 +45,9 @@ import { siteData } from '../data/site';
         </div>
       </section>
 
-      <section class="fps-section">
+      <section class="page-section">
         <div class="shell">
-          <nav class="contents-nav" aria-label="ページ内目次">
+          <nav class="section-nav" aria-label="ページ内目次">
           <a href="#undergraduate">Undergraduate Students</a>
           <a href="#graduate">Graduate Students</a>
           <a href="#research-student">Research Students</a>
@@ -113,10 +113,10 @@ import { siteData } from '../data/site';
   .hero-inner > p { margin: 0 0 14px; color: #536ca9; font: 500 11px/1.4 var(--mono); letter-spacing: .1em; }
   .hero-inner h1 { margin: 0; color: #151515; font: 500 clamp(58px, 7vw, 92px)/1 var(--latin); letter-spacing: -.055em; }
   .hero-inner > div { max-width: 650px; margin-top: 30px; color: #515b68; font-size: 17px; }
-  .fps-section { padding: 88px 0 120px; background: #fff; }
-  .contents-nav { justify-content: flex-start; flex-wrap: wrap; gap: 10px; margin: 0 0 72px; padding: 12px 0; border-top: 1px solid #bcc9dd; border-bottom: 1px solid #bcc9dd; }
-  .contents-nav a { padding: 4px 12px; border: 1px solid #aebdd5; border-radius: 999px; color: #40516a; font-size: 13px; }
-  .contents-nav a:hover { background: #e1e9f6; text-decoration: none; }
+  .page-section { padding: 88px 0 120px; background: #fff; }
+  .section-nav { position: sticky; top: 0; z-index: 3; justify-content: flex-start; flex-wrap: wrap; gap: 10px; margin: 58px 0 72px; padding: 12px 0; border-top: 1px solid #bcc9dd; border-bottom: 1px solid #bcc9dd; background: rgba(245,247,251,.88); backdrop-filter: blur(12px); }
+  .section-nav a { padding: 4px 12px; border: 1px solid #aebdd5; border-radius: 999px; color: #40516a; font-size: 13px; }
+  .section-nav a:hover { background: #e1e9f6; text-decoration: none; }
   .placeholder-content { max-width: 900px; }
   .placeholder-content section { padding: 36px 0 42px; border-top: 1px solid #bcc9dd; scroll-margin-top: 30px; }
   .placeholder-content section:last-child { border-bottom: 1px solid #bcc9dd; }
@@ -132,8 +132,8 @@ import { siteData } from '../data/site';
     .hero-inner { padding-top: 68px; }
     .header-inner { min-height: 64px; }
     .hero-inner h1 { font-size: 58px; letter-spacing: -.04em; }
-    .fps-section { padding: 60px 0 84px; }
-    .contents-nav { margin-bottom: 54px; }
+    .page-section { padding: 60px 0 84px; }
+    .section-nav { margin: 42px 0 54px; overflow-x: auto; white-space: nowrap; }
     .footer-inner { flex-direction: column; gap: 5px; }
   }
 </style>

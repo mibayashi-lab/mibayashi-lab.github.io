@@ -1,4 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#101820"/>
-  <path d="M15 43V20h7l10 14 10-14h7v23h-8V32l-9 12-9-12v11z" fill="#d8ff3e"/>
+  <defs>
+    <clipPath id="icon-crop"><rect width="64" height="64" rx="14" /></clipPath>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#cc6c48" />
+  <g clip-path="url(#icon-crop)">
+    <image href="/images/fav.jpg" x="-17" y="-8" width="99" height="80" preserveAspectRatio="none" />
+  </g>
 </svg>

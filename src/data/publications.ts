@@ -3,96 +3,48 @@ export type Publication = {
   authors: string;
   venue: string;
   year: number;
-  type: 'journal' | 'international-conference';
+  type: 'journal' | 'conference';
   link?: string;
   linkLabel?: string;
 };
 
+const researchmap = (id: string) => `https://researchmap.jp/ryotamibayashi/published_papers/${id}`;
+
 export const publications: Publication[] = [
-  {
-    title: 'Japanese Handwriting Generation Based on Human Preference Feedback Using Direct Preference Optimization',
-    authors: 'Wakana Kuwata, Ryota Mibayashi, Tani Masanori, Hiroaki Ohshima',
-    venue: 'Proceedings of the 13th International Conference on Behavioural and Social Computing (BESC 2026), pp. 344–360',
-    year: 2026,
-    type: 'international-conference',
-    link: 'https://link.springer.com/chapter/10.1007/978-981-92-6910-5_20',
-    linkLabel: 'Springer',
-  },
-  {
-    title: 'Evaluating the Robustness of Japanese LLMs to IME-Related and Typographical Errors',
-    authors: 'Ryota Mibayashi, Hiroaki Ohshima',
-    venue: 'Proceedings of the 13th International Conference on Behavioural and Social Computing (BESC 2026), pp. 90–107',
-    year: 2026,
-    type: 'international-conference',
-    link: 'https://link.springer.com/chapter/10.1007/978-981-92-6913-6_6',
-    linkLabel: 'Springer',
-  },
-  {
-    title: 'Analyzing Atypical Local Features in Museum Artifacts using Generative Image Inpainting',
-    authors: 'Maho Kinoshita, Wakana Kuwata, Ryota Mibayashi, Hiroaki Ohshima',
-    venue: 'Proceedings of the 13th International Conference on Behavioural and Social Computing (BESC 2026), pp. 58–76',
-    year: 2026,
-    type: 'international-conference',
-    link: 'https://link.springer.com/chapter/10.1007/978-981-92-6913-6_4',
-    linkLabel: 'Springer',
-  },
-  {
-    title: 'Supporting Perspective Acquisition and Opinion Formation on Societal Issues through AI-Generated Japanese Rap Battle Debates',
-    authors: 'Ryota Mibayashi, Toru Urakawa, Dai Takanashi, Kanata Yamagishi, Tomoya Morohoshi, Ryuho Sekikawa, Yasuhiko Nishimura, Yuta Takeuchi, Hideaki Tamori, Takehiro Yamamoto, Hiroaki Ohshima',
-    venue: 'Proceedings of the IEEE International Conference on Teaching, Assessment, and Learning for Engineering (TALE 2026)',
-    year: 2026,
-    type: 'international-conference',
-    link: 'https://researchmap.jp/ryotamibayashi/published_papers/55107033',
-    linkLabel: 'researchmap',
-  },
-  {
-    title: 'Design and Prototyping of a TPACK Visualization and Reflection-Support Tool Integrating Pre-, In-, and Post-Class Data',
-    authors: 'HaiChen Wang, Makiko Oyama, Ryota Mibayashi, Hidenari Kiyomitsu',
-    venue: 'Proceedings of the IEEE International Conference on Teaching, Assessment, and Learning for Engineering (TALE 2026)',
-    year: 2026,
-    type: 'international-conference',
-    link: 'https://researchmap.jp/ryotamibayashi/published_papers/55106338',
-    linkLabel: 'researchmap',
-  },
-  {
-    title: 'Output Format Bias in Japanese LLMs: A Study on Kanji Reading Prediction',
-    authors: 'Ryota Mibayashi',
-    venue: 'Proceedings of the 20th International Congress on Advanced Applied Informatics (IIAI-AAI 2026), pp. 246–249',
-    year: 2026,
-    type: 'international-conference',
-    link: 'https://researchmap.jp/ryotamibayashi/published_papers/53701403',
-    linkLabel: 'researchmap',
-  },
-  {
-    title: 'モーラの類似性とトークンの生成確率を考慮した単語辞書検索に依存しない日本語ライム生成',
-    authors: '三林亮太, 山本岳洋, 大島裕明',
-    venue: '情報処理学会論文誌：データベース（TOD）19(3), pp. 1–15',
-    year: 2026,
-    type: 'journal',
-    link: 'https://researchmap.jp/ryotamibayashi/published_papers/53365481',
-    linkLabel: 'researchmap',
-  },
-  {
-    title: '日本語手書き文字生成モデルの提案と自動評価による高品質文字選択',
-    authors: '桑田若菜, 三林亮太, 谷雅德, 大島裕明',
-    venue: '情報処理学会論文誌：データベース（TOD）19(2), pp. 27–40',
-    year: 2026,
-    type: 'journal',
-    link: 'https://researchmap.jp/ryotamibayashi/published_papers/51989074',
-    linkLabel: 'researchmap',
-  },
-  {
-    title: 'Japanese Rhyme Generation Based on Mora Similarity and Generation Probability',
-    authors: 'Ryota Mibayashi, Takehiro Yamamoto, Hiroaki Ohshima',
-    venue: 'Proceedings of the 27th International Conference on Information Integration and Web Intelligence (iiWAS 2025)',
-    year: 2025,
-    type: 'international-conference',
-    link: 'https://dblp.org/rec/conf/iiwas/MibayashiYO25',
-    linkLabel: 'DBLP',
-  },
+  { title: 'Evaluating the Robustness of Japanese LLMs to IME-Related and Typographical Errors', authors: 'Ryota Mibayashi, Hiroaki Ohshima', venue: 'Proceedings of the 13th International Conference on Behavioural and Social Computing (BESC 2026), pp. 90–107', year: 2026, type: 'conference', link: 'https://link.springer.com/chapter/10.1007/978-981-92-6913-6_6', linkLabel: 'Springer' },
+  { title: 'Japanese Handwriting Generation Based on Human Preference Feedback Using Direct Preference Optimization', authors: 'Wakana Kuwata, Ryota Mibayashi, Tani Masanori, Hiroaki Ohshima', venue: 'Proceedings of the 13th International Conference on Behavioural and Social Computing (BESC 2026), pp. 344–360', year: 2026, type: 'conference', link: 'https://link.springer.com/chapter/10.1007/978-981-92-6910-5_20', linkLabel: 'Springer' },
+  { title: 'Analyzing Atypical Local Features in Museum Artifacts using Generative Image Inpainting', authors: 'Maho Kinoshita, Wakana Kuwata, Ryota Mibayashi, Hiroaki Ohshima', venue: 'Proceedings of the 13th International Conference on Behavioural and Social Computing (BESC 2026), pp. 58–76', year: 2026, type: 'conference', link: 'https://link.springer.com/chapter/10.1007/978-981-92-6913-6_4', linkLabel: 'Springer' },
+  { title: 'Design and Prototyping of a TPACK Visualization and Reflection-Support Tool Integrating Pre-, In-, and Post-Class Data', authors: 'HaiChen Wang, Makiko Oyama, Ryota Mibayashi, Hidenari Kiyomitsu', venue: 'Proceedings of the 2026 IEEE International Conference on Teaching, Assessment, and Learning for Engineering (TALE 2026), to appear', year: 2026, type: 'conference', link: researchmap('55425445'), linkLabel: 'researchmap' },
+  { title: 'Supporting Perspective Acquisition and Opinion Formation on Societal Issues through AI-Generated Japanese Rap Battle Debates', authors: 'Ryota Mibayashi, Toru Urakawa, Dai Takanashi, Kanata Yamagishi, Tomoya Morohoshi, Ryuho Sekikawa, Yasuhiko Nishimura, Yuta Takeuchi, Hideaki Tamori, Takehiro Yamamoto, Hiroaki Ohshima', venue: 'Proceedings of the 2026 IEEE International Conference on Teaching, Assessment, and Learning for Engineering (TALE 2026), to appear', year: 2026, type: 'conference', link: researchmap('55107033'), linkLabel: 'researchmap' },
+  { title: 'Output Format Bias in Japanese LLMs: A Study on Kanji Reading Prediction', authors: 'Ryota Mibayashi', venue: 'Proceedings of the 20th International Congress on Advanced Applied Informatics (IIAI-AAI 2026), pp. 246–249', year: 2026, type: 'conference', link: researchmap('53701403'), linkLabel: 'researchmap' },
+  { title: 'モーラの類似性とトークンの生成確率を考慮した単語辞書検索に依存しない日本語ライム生成', authors: '三林亮太, 山本 岳洋, 大島 裕明', venue: '情報処理学会論文誌：データベース（TOD）19(3), pp. 1–15', year: 2026, type: 'journal', link: researchmap('53365481'), linkLabel: 'researchmap' },
+  { title: '日本語手書き文字生成モデルの提案と自動評価による高品質文字選択', authors: '桑田 若菜, 三林 亮太, 谷 雅德, 大島 裕明', venue: '情報処理学会論文誌：データベース（TOD）19(2), pp. 27–40', year: 2026, type: 'journal', link: researchmap('51989074'), linkLabel: 'researchmap' },
+  { title: 'Team mbys at the NTCIR-19 ModelRetrieval Task: Model Ranking and ConvNeXt-Based Image Classification', authors: 'Ryota Mibayashi', venue: 'Proceedings of the 19th NTCIR Conference on Evaluation of Information Access Technologies (NTCIR-19), to appear', year: 2026, type: 'conference', link: researchmap('55106338'), linkLabel: 'researchmap' },
+  { title: 'Overview of the NTCIR-19 ModelRetrieval Task', authors: 'Huu-Long Pham, Ryota Mibayashi, Yoshiyuki Shoji, Makoto P. Kato, Takehiro Yamamoto, Yusuke Yamamoto, Hiroaki Ohshima', venue: 'Proceedings of the 19th NTCIR Conference on Evaluation of Information Access Technologies (NTCIR-19), to appear', year: 2026, type: 'conference', link: researchmap('54400855'), linkLabel: 'researchmap' },
+  { title: 'U-hyogo at the TREC 2026 Million LLMs Track', authors: 'Huu-Long Pham, Ryota Mibayashi, Hiroaki Ohshima', venue: 'Proceedings of the 35th Text REtrieval Conference (TREC 2026), to appear', year: 2026, type: 'conference', link: researchmap('54454811'), linkLabel: 'researchmap' },
+  { title: 'Japanese Rhyme Generation Based on Mora Similarity and Generation Probability', authors: 'Ryota Mibayashi, Takehiro Yamamoto, Hiroaki Ohshima', venue: 'Proceedings of the 27th International Conference on Information Integration and Web Intelligence (iiWAS 2025), pp. 95–111', year: 2025, type: 'conference', link: 'https://link.springer.com/content/pdf/10.1007/978-3-032-11976-6_7.pdf', linkLabel: 'Springer' },
+  { title: 'AI-Assisted Visual Analytics for Student Annotation Deviation Detection in Programming Video Learning', authors: 'Xiaonan Wang, Asako Ohno, Yi Sun, Thanh Ha, Ryota Mibayashi, Hidenari Kiyomitsu', venue: 'Proceedings of the 2025 IEEE International Conference on Teaching, Assessment, and Learning for Engineering (TALE 2025), pp. 1–8', year: 2025, type: 'conference', link: 'https://ieeexplore.ieee.org/document/11346651', linkLabel: 'IEEE Xplore' },
+  { title: 'Pre-trained BERT Model Retrieval: Inference-Based No-Learning Approach using k-Nearest Neighbour Algorithm', authors: 'HuuLong Pham, Ryota Mibayashi, Takehiro Yamamoto, Makoto P. Kato, Yusuke Yamamoto, Yoshiyuki Shoji, Hiroaki Ohshima', venue: 'The IEICE Transactions on Information and Systems E108-D(8), pp. 872–882', year: 2025, type: 'journal', link: researchmap('48726643'), linkLabel: 'researchmap' },
+  { title: 'Japanese Calligraphy Artwork Generation System', authors: 'Wakana Kuwata, Ryota Mibayashi, Masanori Tani, Hiroaki Ohshima', venue: 'Proceedings of the NICOGRAPH International 2025 (Poster), pp. 1–2', year: 2025, type: 'conference', link: researchmap('53666766'), linkLabel: 'researchmap' },
+  { title: 'ラップバトルにおけるアンサーの類型化及びアンサーの有無と表現の自動分類', authors: '三林 亮太, 佃 洸摂, 渡邉 研斗, 中野 倫靖, 後藤 真孝, 山本 岳洋, 大島 裕明', venue: '電子情報通信学会和文論文誌D データ工学と情報マネジメント特集 J108-D(5), pp. 206–219', year: 2025, type: 'journal', link: researchmap('48726616'), linkLabel: 'researchmap' },
+  { title: 'みんぱくBERT：博物館における展示物の解説文を考慮した追加学習済みBERTモデル', authors: '三林 亮太, 相原 健郎, 神門 典子, 莊司 慶行, 山本 岳洋, 山本 祐輔, 大島 裕明', venue: '情報処理学会論文誌：データベース（TOD）18(1), pp. 14–23', year: 2025, type: 'journal', link: researchmap('47829826'), linkLabel: 'researchmap' },
+  { title: 'Debate Generation System in Japanese Rap Battle Format', authors: 'Ryota Mibayashi, Toru Urakawa, Dai Takanashi, Tomoya Morohoshi, Kanata Yamagishi, Ryuho Sekikawa, Yasuhiko Nishimura, Yuta Takeuchi, Mina Shibasaki, Hideaki Tamori, Takehiro Yamamoto, Hiroaki Ohshima', venue: 'Proceedings of the SIGGRAPH Asia 2024 Real-Time Live!, pp. 1–2', year: 2024, type: 'conference', link: 'https://doi.org/10.1145/3681757.3697050', linkLabel: 'DOI' },
+  { title: 'Query Expansion in Food Review Search with Synonymous Phrase Generation by LLM', authors: 'Arisa Ashizawa, Ryota Mibayashi, Hiroaki Ohshima', venue: 'Proceedings of the DASFAA 2024 Workshop on Emerging Results in Data Science and Engineering (ERDSE 2024), pp. 252–260', year: 2024, type: 'conference', link: researchmap('46733462'), linkLabel: 'researchmap' },
+  { title: 'ラップバトルにおける逆向き生成によるライムを含む返答バース生成', authors: '三林 亮太, 山本 岳洋, 佃 洸摂, 渡邉 研斗, 中野 倫靖, 後藤 真孝, 大島 裕明', venue: '情報処理学会論文誌：データベース（TOD）17(2), pp. 28–39', year: 2024, type: 'journal', link: researchmap('46263852'), linkLabel: 'researchmap' },
+  { title: 'Inference-based No-Learning Approach on Pre-trained BERT Model Retrieval', authors: 'Huu-Long Pham, Ryota Mibayashi, Takehiro Yamamoto, Makoto P. Kato, Yusuke Yamamoto, Yoshiyuki Shoji, Hiroaki Ohshima', venue: 'Proceedings of the 2024 IEEE International Conference on Big Data and Smart Computing (BigComp 2024), pp. 234–241', year: 2024, type: 'conference', link: researchmap('45823108'), linkLabel: 'researchmap' },
+  { title: 'Glyph Generation for Japanese Calligraphy based on Encoding both Content and Style', authors: 'Wakana Kuwata, Ryota Mibayashi, Masanori Tani, Hiroaki Ohshima', venue: 'Proceedings of the 2024 IEEE International Conference on Big Data and Smart Computing (BigComp 2024), pp. 207–214', year: 2024, type: 'conference', link: researchmap('45823102'), linkLabel: 'researchmap' },
+  { title: 'KANDUH at the NTCIR-17 Transfer Task', authors: 'Tomoya Hashiguchi, Ryota Mibayashi, Huu-Long Pham, Wakana Kuwata, Yuka Kawada, Yuya Tsuda, Takehiro Yamamoto, Hiroaki Ohshima', venue: 'Proceedings of the 17th NTCIR Conference on Evaluation of Information Access Technologies (NTCIR-17), pp. 332–335', year: 2023, type: 'conference', link: researchmap('45823127'), linkLabel: 'researchmap' },
+  { title: 'Verse Generation by Reverse Generation Considering Rhyme and Answer in Japanese Rap Battles', authors: 'Ryota Mibayashi, Takehiro Yamamoto, Kosetsu Tsukuda, Kento Watanabe, Tomoyasu Nakano, Masataka Goto, Hiroaki Ohshima', venue: 'Proceedings of the 16th International Symposium on Computer Music Multidisciplinary Research (CMMR 2023), pp. 30–41', year: 2023, type: 'conference', link: researchmap('45823111'), linkLabel: 'researchmap' },
+  { title: 'BERTを用いた場所の説明文に対する位置特定容易性の推定', authors: '坂根 和光, 三林 亮太, 川原 敬史, 山本 岳洋, 澤田 祥一, 高階 勇人, 大島 裕明', venue: '日本データベース学会データドリブンスタディーズ 1(6), pp. 1–8', year: 2023, type: 'journal', link: researchmap('45823115'), linkLabel: 'researchmap' },
+  { title: 'UHGSIS at the NTCIR-16 Data Search 2 IR Subtask: A BERT-based Query Modification Approach', authors: 'Moeri Okuda, Ryota Mibayashi, Takafumi Kawahara, Naoaki Matsumoto, Takehiro Yamamoto, Hiroaki Ohshima', venue: 'Proceedings of the 16th NTCIR Conference on Evaluation of Information Access Technologies (NTCIR-16), pp. 19–23', year: 2022, type: 'conference', link: researchmap('45823156'), linkLabel: 'researchmap' },
+  { title: 'Visual Metaphor Construction for Image and Description of Fashion Goods', authors: 'Dan Wang, Ryota Mibayashi, Hiroaki Ohshima', venue: 'Proceedings of the 12th International Congress on Advanced Applied Informatics (IIAI-AAI), pp. 158–163', year: 2022, type: 'conference', link: 'https://doi.org/10.1109/IIAIAAI55812.2022.00040', linkLabel: 'DOI' },
+  { title: 'MinpakuBERT: A Language Model for Understanding Cultural Properties in Museum', authors: 'Ryota Mibayashi, Masaki Ueta, Takafumi Kawahara, Naoaki Matsumoto, Takuma Yoshimura, Kenro Aihara, Noriko Kando, Yoshiyuki Shoji, Yuta Nakajima, Takehiro Yamamoto, Yusuke Yamamoto, Hiroaki Ohshima', venue: 'Proceedings of the 12th International Congress on Advanced Applied Informatics (IIAI-AAI), pp. 13–18', year: 2022, type: 'conference', link: 'https://doi.org/10.1109/IIAIAAI55812.2022.00013', linkLabel: 'DOI' },
+  { title: 'Uhai at the NTCIR-15 Data Search task', authors: 'Ryota Mibayashi, Huulong Pham, Naoaki Matsumoto, Takehiro Yamamoto, Hiroaki Ohshima', venue: 'Proceedings of the 15th NTCIR Conference on Evaluation of Information Access Technologies (NTCIR-15), pp. 293–298', year: 2020, type: 'conference', link: researchmap('46260221'), linkLabel: 'researchmap' },
+  { title: 'Behavioral Classification Using Feature Selection in the Micro Activity Retrieval Task', authors: 'Takuma Yoshimura, Pham Huulong, Ryota Mibayashi, Rui Kimura, Hiroaki Ohshima', venue: 'Proceedings of the 15th NTCIR Conference on Evaluation of Information Access Technologies (NTCIR-15), pp. 304–308', year: 2020, type: 'conference', link: researchmap('45823350'), linkLabel: 'researchmap' },
 ];
 
 export const publicationGroups = [
-  { key: 'journal', title: '学術論文（査読あり）' },
-  { key: 'international-conference', title: '国際会議録（査読あり）' },
+  { key: 'journal', title: '論文誌' },
+  { key: 'conference', title: '国際会議' },
+  { key: 'domestic-conference', title: '国内会議' },
 ] as const;
