@@ -4,9 +4,7 @@ import { siteData } from '../data/site';
 
 const groupedPublications = publicationGroups.map((group) => ({
   ...group,
-  items: group.key === 'domestic-conference'
-    ? []
-    : publications.filter((publication) => publication.type === group.key),
+  items: publications.filter((publication) => publication.type === group.key),
 }));
 
 ---
