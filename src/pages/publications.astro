@@ -9,17 +9,6 @@ const groupedPublications = publicationGroups.map((group) => ({
     : publications.filter((publication) => publication.type === group.key),
 }));
 
-const nonRefereedTitles = new Set([
-  'Team mbys at the NTCIR-19 ModelRetrieval Task: Model Ranking and ConvNeXt-Based Image Classification',
-  'Overview of the NTCIR-19 ModelRetrieval Task',
-  'U-hyogo at the TREC 2026 Million LLMs Track',
-  'KANDUH at the NTCIR-17 Transfer Task',
-  'UHGSIS at the NTCIR-16 Data Search 2 IR Subtask: A BERT-based Query Modification Approach',
-  'Uhai at the NTCIR-15 Data Search task',
-  'Behavioral Classification Using Feature Selection in the Micro Activity Retrieval Task',
-]);
-
-const isRefereed = (title: string) => !nonRefereedTitles.has(title);
 ---
 
 <!doctype html>
@@ -85,7 +74,7 @@ const isRefereed = (title: string) => !nonRefereedTitles.has(title);
                   <li class="publication-item">
                     <div class="publication-meta">
                       <div class="publication-year">{publication.year}</div>
-                      {isRefereed(publication.title) && <span class="publication-tag">査読あり</span>}
+                      {publication.refereed && <span class="publication-tag">査読あり</span>}
                     </div>
                     <div class="publication-body">
                       <h3>{publication.title}</h3>

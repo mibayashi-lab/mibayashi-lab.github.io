@@ -4,6 +4,6 @@
   </defs>
   <rect width="64" height="64" rx="14" fill="#cc6c48" />
   <g clip-path="url(#icon-crop)">
-    <image href="/images/fav.jpg" x="-17" y="-8" width="99" height="80" preserveAspectRatio="none" />
+    <image href="/images/fav.jfif" x="-17" y="-8" width="99" height="80" preserveAspectRatio="none" />
   </g>
 </svg>
