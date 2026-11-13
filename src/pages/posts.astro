@@ -54,12 +54,11 @@ const formatPostDate = (date: Date) => date.toISOString().slice(0, 10);
         <div class="shell">
           <div class="posts-head"><span>Date</span><span>Category</span><span>Title</span></div>
           <div class="posts-list">
-            {posts.map((post, index) => (
+            {posts.map((post) => (
               <article class="post-row">
                 <time datetime={formatPostDate(post.data.date)}>{formatPostDate(post.data.date).replaceAll('-', '.')}</time>
                 <span class:list={['category', `category-${post.data.category.toLowerCase()}`]}>{post.data.category}</span>
                 <h2><a href={`/posts/${post.id}/`}>{post.data.title}</a></h2>
-                <span class="number">{String(index + 1).padStart(2, '0')}</span>
               </article>
             ))}
           </div>
@@ -105,19 +104,18 @@ const formatPostDate = (date: Date) => date.toISOString().slice(0, 10);
   .hero-inner > div { max-width: 650px; margin-top: 30px; color: #515b68; font-size: 17px; }
 
   .posts-section { padding: 88px 0 120px; background: #fff; }
-  .posts-head, .post-row { display: grid; grid-template-columns: 160px 130px minmax(0, 1fr) 48px; gap: 28px; align-items: center; }
+  .posts-head, .post-row { display: grid; grid-template-columns: 160px 130px minmax(0, 1fr); gap: 28px; align-items: center; }
   .posts-head { padding: 0 18px 16px; color: #718096; font: 500 11px/1 var(--mono); text-transform: uppercase; }
   .posts-list { border-top: 1px solid var(--line); }
   .post-row { min-height: 112px; padding: 26px 18px; border-bottom: 1px solid var(--line); transition: background .2s, padding .2s; }
   .post-row:hover { padding-inline: 28px; background: #f5f7fb; }
-  time, .number { color: #68768a; font: 500 12px/1 var(--mono); }
+  time { color: #68768a; font: 500 12px/1 var(--mono); }
   .category { width: max-content; padding: 6px 10px; background: var(--category-bg, #fff3bd); color: #333; font: 500 11px/1 var(--mono); }
   .category-paper { --category-bg: #f6dce3; }
   .category-project { --category-bg: #dce8fb; }
   .category-member { --category-bg: #e3f2df; }
   .category-award { --category-bg: #f7dfc2; }
   .post-row h2 { margin: 0; font-size: clamp(16px, 1.5vw, 20px); font-weight: 600; line-height: 1.65; }
-  .number { justify-self: end; color: #9ba5b3; }
 
   footer { padding: 36px 0; background: #151515; color: #b9c1ca; }
   .footer-inner { display: flex; justify-content: space-between; gap: 24px; font-size: 13px; }
@@ -133,7 +131,6 @@ const formatPostDate = (date: Date) => date.toISOString().slice(0, 10);
     .post-row:hover { padding-inline: 4px; }
     .category { justify-self: end; }
     .post-row h2 { grid-column: 1 / -1; }
-    .number { display: none; }
     .footer-inner { flex-direction: column; gap: 4px; }
   }
 </style>
