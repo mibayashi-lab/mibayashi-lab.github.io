@@ -116,10 +116,8 @@ const formatPostDate = (date: Date) => date.toISOString().slice(0, 10);
   .category-member { --category-bg: #e3f2df; }
   .category-award { --category-bg: #f7dfc2; }
   .post-row h2 { margin: 0; font-size: clamp(16px, 1.5vw, 20px); font-weight: 600; line-height: 1.65; }
-  .post-row h2 a { position: relative; transition: color .2s; }
-  .post-row h2 a::after { content: '↗'; position: absolute; left: calc(100% + 10px); top: 50%; color: #536ca9; font: 500 15px/1 var(--mono); opacity: 0; transform: translate(-6px, -50%); transition: opacity .2s, transform .2s; }
+  .post-row h2 a { transition: color .2s; }
   .post-row:hover h2 a { color: #536ca9; }
-  .post-row:hover h2 a::after { opacity: 1; transform: translate(0, -50%); }
 
   footer { padding: 36px 0; background: #151515; color: #b9c1ca; }
   .footer-inner { display: flex; justify-content: space-between; gap: 24px; font-size: 13px; }
