@@ -64,7 +64,7 @@ const groupedPublications = publicationGroups.map((group) => ({
           {groupedPublications.map((group) => (
             <section id={group.key} class="publication-group">
               <div class="group-heading">
-                <h2>{group.title}</h2>
+                <h2>{group.title}<span class="group-count">{group.items.length}件</span></h2>
               </div>
               {group.items.length > 0 ? <ol class="publication-list">
                 {group.items.map((publication) => (
@@ -130,6 +130,7 @@ const groupedPublications = publicationGroups.map((group) => ({
   .publication-group + .publication-group { margin-top: 88px; }
   .group-heading { display: flex; align-items: baseline; gap: 20px; margin-bottom: 18px; }
   h2 { margin: 0; color: #1e2c43; font-size: clamp(28px, 4vw, 46px); font-weight: 500; line-height: 1.25; letter-spacing: -1px; }
+  .group-count { margin-left: 12px; color: #536ca9; font: 500 14px/1 var(--mono); letter-spacing: .04em; vertical-align: middle; }
   .publication-list { margin: 0; padding: 0; list-style: none; border-top: 1px solid #bcc9dd; }
   .publication-item { display: grid; grid-template-columns: 80px 1fr; gap: 30px; padding: 28px 0 30px; border-bottom: 1px solid #d2dbe8; }
   .publication-meta { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
