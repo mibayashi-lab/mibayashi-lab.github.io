@@ -1,5 +1,5 @@
 ---
-title: 福田翔流さんがKYOTO PLATEAU HACK 2026でサギタリウス賞（京都産業大学賞）を受賞しました。
+title: 福田翔流さんがKYOTO PLATEAU HACK 2026でサギタリウス賞（京都産業大学賞）を受賞しました
 date: 2026-10-13
 category: AWARD
 summary: PLATEAUの3D都市モデル、オープンデータを用いて京都のコミュニティバス問題に取り組みました。
