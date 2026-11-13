@@ -77,7 +77,6 @@ const groupedPublications = publicationGroups.map((group) => ({
                       <h3>{publication.title}</h3>
                       <p class="authors">{publication.authors}</p>
                       <p class="venue">{publication.venue}</p>
-                      {publication.link && <a class="publication-link" href={publication.link} target="_blank" rel="noopener noreferrer">{publication.linkLabel ?? '詳細'} <span aria-hidden="true">↗</span></a>}
                     </div>
                   </li>
                 ))}
@@ -140,7 +139,6 @@ const groupedPublications = publicationGroups.map((group) => ({
   h3 { margin: 0 0 10px; color: #19263a; font-size: 21px; font-weight: 600; line-height: 1.5; }
   .authors, .venue { margin: 0; color: #4b5a70; font-size: 14px; }
   .venue { margin-top: 4px; color: #6c788b; font-style: italic; }
-  .publication-link { display: inline-block; margin-top: 11px; font-family: "IBM Plex Mono", monospace; font-size: 12px; }
   .empty-group { margin: 0; padding: 28px 0; border-top: 1px solid #bcc9dd; border-bottom: 1px solid #d2dbe8; color: #69788e; }
   footer { margin-top: 0; padding: 34px 0; border-top: 1px solid #263752; background: #151515; color: #b9c1ca; font-size: 13px; }
   .footer-inner { display: flex; justify-content: space-between; }
