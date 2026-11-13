@@ -151,7 +151,7 @@ export const siteData = {
       comment: '自然言語処理・情報検索・創造的テキスト生成を研究しています。',
     },
     {
-      role: 'Student / 2026',
+      role: 'B3 / Joined 2026',
       name: '小西 奏夢',
       nameEn: 'Sora Konishi',
       position: '学部3年',
@@ -159,7 +159,7 @@ export const siteData = {
       comment: 'ただの阪神ファン。',
     },
     {
-      role: 'Student / 2026',
+      role: 'B3 / Joined 2026',
       name: '小林 稜月',
       nameEn: 'Izuki Kobayashi',
       position: '学部3年',
@@ -167,7 +167,7 @@ export const siteData = {
       comment: 'INFP系エンターテイナー。',
     },
     {
-      role: 'Student / 2026',
+      role: 'B3 / Joined 2026',
       name: '田中 千尋',
       nameEn: 'Chihiro Tanaka',
       position: '学部3年',
@@ -175,7 +175,7 @@ export const siteData = {
       comment: '実家の猫が世界一。',
     },
     {
-      role: 'Student / 2026',
+      role: 'B3 / Joined 2026',
       name: '福田 翔流',
       nameEn: 'Kakeru Fukuda',
       position: '学部3年',

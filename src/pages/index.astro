@@ -9,7 +9,7 @@ const latestPosts = (await getCollection('posts', ({ data }) => !data.draft))
 const formatPostDate = (date: Date) => date.toISOString().slice(0, 10);
 const memberGroups = [
   { title: '教員', titleEn: 'Faculty', members: siteData.members.filter((member) => member.role === 'Principal Investigator') },
-  { title: '学生', titleEn: 'Students', members: siteData.members.filter((member) => member.role.startsWith('Student')) },
+  { title: '学生', titleEn: 'Students', members: siteData.members.filter((member) => member.role !== 'Principal Investigator') },
 ];
 ---
 
@@ -156,7 +156,7 @@ const memberGroups = [
                         <span>{member.role}</span>
                       </div>
                       <div class="member-copy">
-                        <p>{member.position}</p>
+                        {'profile' in member && <p>{member.position}</p>}
                         <h3>{member.name}</h3>
                         <span>{member.nameEn}</span>
                         <div class="member-comment">{member.comment}</div>
