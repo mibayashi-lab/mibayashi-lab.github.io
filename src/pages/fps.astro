@@ -1,0 +1,120 @@
+---
+import { siteData } from '../data/site';
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={`${siteData.name}の学生募集・進学希望者向け情報`} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <title>For Prospective Students | {siteData.name}</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-bar"></div>
+      <div class="header-wrapper">
+        <a class="site-title" href="/">神戸大学 三林研究室</a>
+        <nav aria-label="メインナビゲーション">
+          <a href="/#about">About</a>
+          <a href="/#projects">Themes</a>
+          <a href="/#members">Members</a>
+          <a href="/publications/">Publications</a>
+          <a href="/posts/">Posts</a>
+          <a aria-current="page" href="/fps/">For Students</a>
+          <a href="/#contact">Contact Us</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page-content">
+      <article>
+        <header class="post-header">
+          <p class="eyebrow">For prospective students</p>
+          <h1>学生募集</h1>
+          <p class="lead">三林研究室への所属・進学を検討している学生の方へ</p>
+        </header>
+
+        <nav class="contents-nav" aria-label="ページ内目次">
+          <a href="#undergraduate">Undergraduate Students</a>
+          <a href="#graduate">Graduate Students</a>
+          <a href="#research-student">Research Students</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="placeholder-content">
+          <section id="undergraduate">
+            <p class="section-label">01</p>
+            <h2>Undergraduate Students</h2>
+            <p>内容は後で追記します。</p>
+          </section>
+          <section id="graduate">
+            <p class="section-label">02</p>
+            <h2>Graduate Students</h2>
+            <p>内容は後で追記します。</p>
+          </section>
+          <section id="research-student">
+            <p class="section-label">03</p>
+            <h2>Research Students</h2>
+            <p>内容は後で追記します。</p>
+          </section>
+          <section id="contact">
+            <p class="section-label">04</p>
+            <h2>Contact</h2>
+            <p>内容は後で追記します。</p>
+          </section>
+        </div>
+      </article>
+    </main>
+
+    <footer><div class="footer-wrapper"><span>神戸大学 三林研究室</span><span>{siteData.contact.email}</span></div></footer>
+  </body>
+</html>
+
+<style>
+  * { box-sizing: border-box; }
+  html { background: #e8edf8; color: #151515; font-family: "Noto Sans JP", "DM Sans", sans-serif; font-size: 16px; line-height: 1.75; }
+  body { margin: 0; border-top: 4px solid #263752; background: #f5f7fb; }
+  a { color: #536ca9; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .site-header { min-height: 64px; border-bottom: 1px solid #becbe0; background: rgba(225,233,246,.94); backdrop-filter: blur(12px); }
+  .header-wrapper { width: min(calc(100% - 64px), 1200px); min-height: 64px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+  .site-title { color: #1e2c43; font-size: 18px; font-weight: 700; letter-spacing: -.5px; }
+  .site-title:hover { text-decoration: none; }
+  nav { display: flex; gap: 25px; }
+  nav a { color: #40516a; font-family: "DM Sans", "Noto Sans JP", sans-serif; font-size: 16px; font-weight: 500; }
+  nav a:hover, nav a[aria-current="page"] { color: #14233a; }
+  .page-content { position: relative; padding: 70px 0 110px; overflow: hidden; background: radial-gradient(circle at 88% 9%, rgba(191,211,255,.72) 0 170px, transparent 171px), radial-gradient(circle at 73% 18%, rgba(255,221,153,.55) 0 115px, transparent 116px), linear-gradient(#f8f9fc, #eef2f8); }
+  .page-content::before { content: ""; position: absolute; inset: 0; opacity: .38; pointer-events: none; background-image: linear-gradient(#e4e8ef 1px, transparent 1px), linear-gradient(90deg, #e4e8ef 1px, transparent 1px); background-size: 72px 72px; }
+  .page-content > article { position: relative; z-index: 1; width: min(calc(100% - 64px), 1200px); margin: 0 auto; }
+  .post-header { max-width: 820px; margin-bottom: 42px; }
+  .eyebrow, .section-label { color: #536ca9; font-family: "IBM Plex Mono", monospace; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+  .eyebrow { margin: 0 0 20px; }
+  h1 { margin: 0; color: #1e2c43; font-size: clamp(48px, 7vw, 88px); font-weight: 400; line-height: 1.1; letter-spacing: -3px; }
+  .lead { max-width: 680px; margin: 24px 0 0; font-size: 20px; }
+  .contents-nav { justify-content: flex-start; flex-wrap: wrap; gap: 10px; margin: 0 0 72px; padding: 12px 0; border-top: 1px solid #bcc9dd; border-bottom: 1px solid #bcc9dd; }
+  .contents-nav a { padding: 4px 12px; border: 1px solid #aebdd5; border-radius: 999px; color: #40516a; font-size: 13px; }
+  .contents-nav a:hover { background: #e1e9f6; text-decoration: none; }
+  .placeholder-content { max-width: 900px; }
+  .placeholder-content section { padding: 36px 0 42px; border-top: 1px solid #bcc9dd; scroll-margin-top: 30px; }
+  .placeholder-content section:last-child { border-bottom: 1px solid #bcc9dd; }
+  .section-label { margin: 0 0 8px; }
+  h2 { margin: 0 0 16px; color: #1e2c43; font-size: clamp(28px, 4vw, 46px); font-weight: 500; line-height: 1.25; letter-spacing: -1px; }
+  .placeholder-content p:last-child { margin: 0; color: #69788e; }
+  footer { padding: 34px 0; border-top: 1px solid #263752; background: #151515; color: #b9c1ca; font-size: 13px; }
+  .footer-wrapper { width: min(calc(100% - 64px), 1200px); margin: 0 auto; display: flex; justify-content: space-between; }
+  @media (max-width: 720px) {
+    .header-wrapper, .page-content > article, .footer-wrapper { width: min(calc(100% - 32px), 1200px); }
+    .header-wrapper { min-height: 57px; }
+    nav:not(.contents-nav) { display: none; }
+    .page-content { padding-top: 42px; }
+    h1 { font-size: 52px; letter-spacing: -2px; }
+    .lead { font-size: 17px; }
+    .contents-nav { margin-bottom: 54px; }
+    .footer-wrapper { flex-direction: column; gap: 5px; }
+  }
+</style>
