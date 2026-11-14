@@ -57,7 +57,29 @@ import { siteData } from '../data/site';
           <div class="placeholder-content">
           <section id="undergraduate-3">
             <h2>学部生</h2>
-            <p>内容は後で追記します。</p>
+            <h3>配属対象</h3>
+            <p>三林研究室に卒業研究で所属できるのは、<strong>神戸大学 国際人間科学部 グローバル文化学科 言語情報コミュニケーション系プログラムの学生</strong>です。</p>
+            <p>他学部・他学科・他プログラムの学生は、卒業研究で三林研究室に所属することはできませんので、ご注意ください。</p>
+
+            <h3>研究テーマ</h3>
+            <p>三林研究室では、<strong>自然言語処理・大規模言語モデル（LLM）・情報検索・生成AI</strong>などを中心に、人とAI・情報との関わりについて研究しています。</p>
+            <p>特に、日本語LLMの評価、AIを活用した創作支援、情報検索・推薦などに関する研究に取り組んでいます。</p>
+            <p>配属時点で具体的な研究テーマが決まっている必要はありません。「生成AIについて研究してみたい」「こんなシステムを作ってみたい」「身近に感じているこの問題を研究にできないか」といったところから、相談しながら研究テーマを決めていきます。</p>
+
+            <h3>配属後の流れ</h3>
+            <p>3年次は、論文の読み方、研究テーマの探し方、プログラミングや実験・評価の方法など、卒業研究に必要な基礎を身につけながら、自分の興味のあるテーマを探していきます。</p>
+            <p>その後、関連研究の調査や小規模な実験・開発を行いながら、卒業研究のテーマを具体化していきます。4年次には、自分の研究テーマについて実装・実験・評価を進め、卒業論文としてまとめます。</p>
+            <p>研究が十分に進んだ場合には、卒業論文だけで終わらせず、<strong>国内学会での発表や論文投稿にも積極的に挑戦してほしい</strong>と考えています。</p>
+
+            <h3>こんな学生を歓迎します</h3>
+            <ul>
+              <li>AI・自然言語処理・情報検索などに興味がある</li>
+              <li>新しい技術を触ったり、何かを作ったりすることが好き</li>
+              <li>身近な疑問や興味を研究につなげてみたい</li>
+              <li>分からないことを自分で調べることが苦にならない</li>
+              <li>AIに答えを出してもらうだけでなく、その仕組みや結果について自分でも考えてみたい</li>
+              <li>学会発表や論文執筆にも挑戦してみたい</li>
+            </ul>
           </section>
           <section id="master">
             <h2>博士前期課程（修士）</h2>
@@ -116,6 +138,10 @@ import { siteData } from '../data/site';
   .placeholder-content { max-width: 900px; }
   .placeholder-content section { padding: 36px 0 42px; border-top: 1px solid #bcc9dd; scroll-margin-top: 30px; }
   .placeholder-content section:last-child { border-bottom: 1px solid #bcc9dd; }
+  .placeholder-content h3 { margin: 36px 0 12px; color: #40516a; font-size: 22px; font-weight: 600; line-height: 1.4; }
+  .placeholder-content h2 + h3 { margin-top: 24px; }
+  .placeholder-content ul { margin: 0; padding-left: 1.4em; color: #69788e; }
+  .placeholder-content li + li { margin-top: 6px; }
   h2 { margin: 0 0 16px; color: #1e2c43; font-size: clamp(28px, 4vw, 46px); font-weight: 500; line-height: 1.25; letter-spacing: -1px; }
   .unavailable-heading { text-decoration: line-through; text-decoration-thickness: 2px; text-decoration-color: #536ca9; }
   .placeholder-content p:last-child { margin: 0; color: #69788e; }
