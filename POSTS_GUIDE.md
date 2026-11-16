@@ -7,7 +7,7 @@
 1. GitHubで `src/content/posts/_template.md` を開く
 2. 右上の鉛筆アイコンから内容をコピーする
 3. `src/content/posts` に戻り、`Add file` → `Create new file` を選ぶ
-4. ファイル名を `2026-10-13-article-name.md` のように半角英数字で付ける
+4. ファイル名を `2026-10-13-article-name.md` のように**半角**英数字で付ける
 5. コピーした内容を貼り付けて編集する
 6. 公開するときは `draft: false` にする
 7. `Commit changes...` を押す
@@ -36,14 +36,15 @@ draft: false
 
 ## 記事に画像を載せる
 
-1. GitHubで `public/images/posts` を開く
-2. `Add file` → `Upload files` から画像をアップロードする
-3. 画像名は `2026-10-13-event.jpg` のように、半角英数字とハイフンで付ける
+1. 画像名は `2026-10-13-event.jpg` のように、**半角**英数字と**ハイフン**で付ける
+2. GitHubで `public/images/posts` を開く
+3. `Add file` → `Upload files` から画像をアップロードする
 4. 記事のMarkdown内で、画像を表示したい場所に次の1行を書く
 
 ```markdown
 ![画像の説明](/images/posts/2026-10-13-event.jpg)
 ```
+`縦画像`は見やすいよう、適度に**トリミング**してください。
 
 `画像の説明`には「研究発表の様子」など、画像の内容が分かる短い説明を書いてください。
 
