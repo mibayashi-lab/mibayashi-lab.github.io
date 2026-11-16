@@ -26,4 +26,4 @@ draft: false
 今後ともよろしくお願いします！
 
 
-![Unrailed 2をやるメンバー](/images/posts/2026-09-01-member-introduction.png)
+![Unrailed 2をやるメンバー](/images/posts/2026-09-01-member-introduction.jpg)
