@@ -49,3 +49,17 @@ draft: false
 `画像の説明`には「研究発表の様子」など、画像の内容が分かる短い説明を書いてください。
 
 画像は横幅1600px程度、JPEGまたはWebP形式を推奨します。ファイルサイズが大きすぎる場合は、アップロード前に縮小してください。
+
+### 写真を画面に横並びに表示する 
+
+```
+<div style="display: flex; gap: 8px;">
+  <img src="/images/posts/2026-10-13-event1.jpg" alt="画像の説明1" style="width: 50%; height: auto; object-fit: cover;">
+  <img src="/images/posts/2026-10-13-event2.jpg" alt="画像の説明2" style="width: 50%; height: auto; object-fit: cover;">
+</div>
+```
+使用例：[2026-11-05 BESC2026の記事](src/content/posts/2026-11-05-besc-2026.md)
+
+
+
+
