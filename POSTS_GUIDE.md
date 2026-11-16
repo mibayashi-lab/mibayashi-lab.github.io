@@ -58,7 +58,7 @@ draft: false
   <img src="/images/posts/2026-10-13-event2.jpg" alt="画像の説明2" style="width: 50%; height: auto; object-fit: cover;">
 </div>
 ```
-使用例：[2026-11-05 BESC2026の記事](src/content/posts/2026-11-05-besc-2026.md)
+使用例：[2026-11-05 BESC2026の記事](https://mibayashi-lab.github.io/posts/2026-11-05-besc-2026/)
 
 
 
