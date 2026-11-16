@@ -11,22 +11,19 @@ draft: false
 記念すべき一回目となるゼミパーティを2026年11月10日に開催しました。
 
 3種類のフライドポテトを用意し、目隠しをして当てる「利きフライドポテト」を行いました。<br>
+![用意したポテトたち](/images/posts/2026-11-10-seminar-party-1-potatoes.jpg)
 
 ちなみに僕と先生は間違えました...モスバーガーとケンタッキーのポテトは同じ味な気がします...
+![自信満々に間違える先生](/images/posts/2026-11-10-seminar-party-1-kiki-potato.gif)
 
 超巨大なバーガー「ギルティ ザ・ワンパウンダー」などバーガーキングも堪能しました。
+![ギルティ ザ・ワンパウンダーを割る先生](/images/posts/2026-11-10-seminar-party-1-burger.jpg)
 
 お腹が満たされた後はみんなで「Unrailed 2」というゲームをしました。
 
 列車が脱線しないように資材を集め、線路を引き続けるゲームなので役割分担や全体の状況を把握できるかどうかが試されました。
+![Unrailed 2をプレイするゼミ生たち](/images/posts/2026-11-10-seminar-party-1-game.jpg)
 
 線路が無くて責任転嫁が起きたり、壁際に閉じ込められてパニックになったりと協力ゲームは本性が出るのでオススメです:)
 
 次回のパーティもお楽しみに。
-
-<div class="post-gallery">
-<img src="/images/posts/2026-11-10-seminar-party-1-potatoes.jpg" alt="用意したポテトたち">
-<img src="/images/posts/2026-11-10-seminar-party-1-kiki-potato.gif" alt="自信満々に間違える先生">
-<img src="/images/posts/2026-11-10-seminar-party-1-burger.jpg" alt="ギルティ ザ・ワンパウンダーを割る先生">
-<img src="/images/posts/2026-11-10-seminar-party-1-game.jpg" alt="Unrailed 2をプレイするゼミ生たち">
-</div>

@@ -98,6 +98,7 @@ const postDate = post.data.date.toISOString().slice(0, 10);
   .post-content :global(h3) { margin:1.8em 0 .6em; font-size:22px; }
   .post-content :global(a) { color:#3f5f9f; text-decoration:underline; }
   .post-content :global(img) { max-width:100%; height:auto; }
+  .post-content :global(p > img:only-child) { display:block; width:100%; height:clamp(220px, 42vw, 430px); max-width:none; object-fit:cover; margin:1.4em 0; }
   .post-content :global(.post-gallery) { display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:12px; margin:1.8em 0; }
   .post-content :global(.post-gallery img) { width:100%; aspect-ratio:4 / 3; object-fit:cover; }
   footer { padding:36px 0; background:#151515; color:#b9c1ca; }
