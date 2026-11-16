@@ -1,0 +1,15 @@
+---
+title: EACL 2027に論文が採択されました
+date: 2026-11-13
+category: PAPER
+summary: 日本語LLMの漢字読みと音韻理解を評価するベンチマークYOMI-Benchに関する論文がEACL 2027 Main Conferenceに採択されました。
+draft: false
+---
+
+The 19th Conference of the European Chapter of the Association for Computational Linguistics（EACL 2027）のMain Conferenceに、日本語LLMの漢字読みと音韻理解を評価するベンチマークに関する論文が採択されました。
+
+## 採択論文
+
+- YOMI-Bench: A Benchmark for Evaluating Kanji Reading and Phonological Understanding of LLMs for Japanese<br>
+Ryota Mibayashi, Hiroya Takamura, Hitomi Yanaka<br>
+The 19th Conference of the European Chapter of the Association for Computational Linguistics (EACL 2027).
