@@ -1,6 +1,6 @@
 ---
 title: 研究室のメンバーを紹介します！
-date: 2026-11-16
+date: 2026-09-01
 category: NEWS
 summary: 研究室に配属された3年生4名を紹介します！
 draft: false
@@ -26,4 +26,4 @@ draft: false
 今後ともよろしくお願いします！
 
 
-![Unrailed 2をやるメンバー](/images/posts/2026-11-16-member-introduction.png)
+![Unrailed 2をやるメンバー](/images/posts/2026-09-01-member-introduction.png)
