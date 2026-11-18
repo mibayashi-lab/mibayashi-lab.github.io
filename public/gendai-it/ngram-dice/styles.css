@@ -34,5 +34,7 @@
 .dice-wrap{position:relative;height:158px;padding-top:28px}.dice-training-badge{position:absolute;top:0;left:50%;transform:translateX(-50%);margin:0;white-space:nowrap}.dice-caption{margin-top:10px}
 body:not(.dice-b-unlocked) .dual-roll-buttons{grid-template-columns:minmax(180px,360px);justify-content:center}
 .dual-roll-button small{display:none}
+.dual-roll-button.reset-state,.dual-roll-button.reset-state.b{background:#8a9a91;box-shadow:0 3px 0 #65766d}
+.result-message.fade-out{opacity:0;transform:scale(.98);animation:none;transition:opacity var(--result-fade-duration,5s) ease,transform var(--result-fade-duration,5s) ease}
 .super-shop-section{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.super-shop-section:before{content:'DICE A アップグレード';grid-column:1 / -1;font:600 11px 'DM Mono';letter-spacing:.08em;color:var(--green);border-bottom:1px solid var(--line);padding-bottom:12px}
 body:not(.dice-b-unlocked) .corpus-lane:first-child>strong:after{content:'DICE'}body.dice-b-unlocked .corpus-lane:first-child>strong:after{content:'DICE A'}
