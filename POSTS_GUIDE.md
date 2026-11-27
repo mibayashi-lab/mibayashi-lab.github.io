@@ -22,6 +22,7 @@ title: 記事タイトル
 date: 2026-10-13
 category: NEWS
 summary: 記事の短い説明
+thumbnail: None
 draft: false
 ---
 ```
@@ -30,11 +31,28 @@ draft: false
 - `date`: `年-月-日`形式の日付
 - `category`: `NEWS`、`PAPER`、`PROJECT`、`MEMBER`など
 - `summary`: 記事の短い説明
+- `thumbnail`: 一覧に表示するサムネイル画像。`/images/posts/ファイル名.jpg`のように指定する。`None`または未指定の場合は、カテゴリごとの代表画像を表示する
 - `draft`: `true`なら非公開、`false`なら公開
 
 ファイル名が記事URLになります。例：`2026-10-13-open-lab.md` → `/posts/2026-10-13-open-lab/`
 
 ## 記事に画像を載せる
+
+### 一覧用サムネイルを指定する
+
+記事本文の画像とは別の画像を一覧のサムネイルにしたい場合は、記事上部の設定に画像パスを指定します。
+
+```yaml
+thumbnail: /images/posts/2026-10-13-thumbnail.jpg
+```
+
+サムネイルを指定しない場合、または次のように`None`を指定した場合は、記事のカテゴリに対応した代表画像が自動で表示されます。
+
+```yaml
+thumbnail: None
+```
+
+サムネイルは一覧上で固定サイズにトリミングして表示されます。学会ロゴなど、利用許諾が確認できていない画像は使わず、研究室で用意した画像やオリジナル画像を使用してください。
 
 1. 画像名は `2026-10-13-event.jpg` のように、**半角**英数字と**ハイフン**で付ける
 2. GitHubで `public/images/posts` を開く
