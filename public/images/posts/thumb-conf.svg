@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 120">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#eef7fa"/><stop offset="1" stop-color="#cce4ec"/></linearGradient></defs>
+  <rect width="220" height="120" rx="8" fill="url(#g)"/><path d="M145 0v120M175 0v120M205 0v120" stroke="#3e7180" stroke-opacity=".12" stroke-width="1"/><circle cx="174" cy="54" r="28" fill="none" stroke="#3e7180" stroke-opacity=".3" stroke-width="2"/><text x="22" y="48" fill="#3e7180" font-family="Arial,sans-serif" font-size="22" font-weight="700" letter-spacing="2">CONF</text><text x="22" y="91" fill="#376573" font-family="monospace" font-size="8" letter-spacing="2">PRESENTATION / DISCUSSION</text>
+</svg>
