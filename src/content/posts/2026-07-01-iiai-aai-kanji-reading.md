@@ -3,6 +3,7 @@ title: IIAI-AAI 2026に論文が採択されました
 date: 2026-05-21
 category: PAPER
 summary: IIAI-AAI 2026に論文が採択されました。
+thumbnail: /images/posts/thumb-iiai-aai-2026.svg
 draft: false
 ---
 

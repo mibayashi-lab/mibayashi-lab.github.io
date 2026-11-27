@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 120">
+  <defs><linearGradient id="sky" y2="1"><stop stop-color="#aecbe0"/><stop offset="1" stop-color="#e5c994"/></linearGradient></defs>
+  <rect width="220" height="120" rx="8" fill="url(#sky)"/><circle cx="177" cy="28" r="18" fill="#fff3c4" fill-opacity=".8"/><path d="M0 77h220v43H0z" fill="#527e91"/><path d="M0 78l40-20 31 15 29-20 31 18 33-14 56 21v42H0z" fill="#4d6174"/><path d="M73 82v-23h8v-9h16v9h8v23M68 82h42M151 84v-14h31v14" fill="#303f54"/><path d="M0 92c34-7 57 6 91 0s63-4 129 1" stroke="#b8d9dc" stroke-width="2" fill="none"/><text x="16" y="25" fill="#fff" font-family="Arial,sans-serif" font-size="17" font-weight="700" letter-spacing="1">iiWAS 2025</text><text x="16" y="40" fill="#fff" fill-opacity=".92" font-family="monospace" font-size="8" letter-spacing="1.5">MATSUE, JAPAN</text>
+</svg>
