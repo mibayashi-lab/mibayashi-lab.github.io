@@ -3,6 +3,7 @@ title: ここに記事タイトルを書く
 date: 2026-10-13
 category: NEWS
 summary: 一覧や検索結果に表示する短い説明を書く
+thumbnail: None
 draft: true
 ---
 

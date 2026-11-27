@@ -5,7 +5,8 @@ import { getCollection } from 'astro:content';
 const posts = (await getCollection('posts', ({ data }) => !data.draft))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 const formatPostDate = (date: Date) => date.toISOString().slice(0, 10);
-const thumbnailFor = (post: (typeof posts)[number]) => post.body.match(/!\[[^\]]*\]\(([^)]+)\)/)?.[1];
+const thumbnailFor = (post: (typeof posts)[number]) =>
+  post.data.thumbnail && post.data.thumbnail.toLowerCase() !== 'none' ? post.data.thumbnail : undefined;
 const representativeThumbnailFor = (category: string) => `/images/posts/thumb-${category.toLowerCase()}.svg`;
 ---
 
