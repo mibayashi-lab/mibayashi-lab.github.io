@@ -3,6 +3,7 @@ title: 京都未踏的人材発掘・育成事業のプロジェクトマネー�
 date: 2026-06-01
 category: MEMBER
 summary: 三林亮太が京都未踏的人材発掘・育成事業のプロジェクトマネージャに就任しました。
+thumbnail: None
 draft: false
 ---
 

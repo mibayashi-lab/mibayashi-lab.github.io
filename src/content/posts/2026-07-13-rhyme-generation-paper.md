@@ -3,6 +3,7 @@ title: 情報処理学会論文誌：データベース（TOD）に論文が採�
 date: 2026-04-15
 category: PAPER
 summary: 情報処理学会論文誌：データベース（TOD）に論文が採録されました
+thumbnail: None
 draft: false
 ---
 

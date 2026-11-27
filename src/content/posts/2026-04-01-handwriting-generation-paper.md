@@ -3,6 +3,7 @@ title: 日本語手書き文字生成に関する共著論文が情報処理学�
 date: 2026-04-01
 category: PAPER
 summary: 日本語手書き文字生成モデルと自動評価による高品質文字選択に関する共著論文が掲載されました。
+thumbnail: None
 draft: false
 ---
 

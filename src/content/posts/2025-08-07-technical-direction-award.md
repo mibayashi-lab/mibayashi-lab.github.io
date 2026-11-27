@@ -3,6 +3,7 @@ title: テクニカルディレクションアワードのAI部門でGoldを受�
 date: 2025-08-07
 category: AWARD
 summary: ラップバトル形式の議論生成システムがAI部門Goldを受賞しました。
+thumbnail: None
 draft: false
 ---
 
