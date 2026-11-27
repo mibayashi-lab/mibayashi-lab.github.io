@@ -57,12 +57,12 @@ const thumbnailFor = (post: (typeof posts)[number]) =>
           <div class="posts-head"><span>Date</span><span>Category</span><span>Title</span><span aria-hidden="true"></span></div>
           <div class="posts-list">
             {posts.map((post) => (
-              <article class="post-row">
+              <a class="post-row" href={`/posts/${post.id}/`}>
                 <time datetime={formatPostDate(post.data.date)}>{formatPostDate(post.data.date).replaceAll('-', '.')}</time>
                 <span class:list={['category', `category-${post.data.category.toLowerCase()}`]}>{post.data.category}</span>
-                <h2><a href={`/posts/${post.id}/`}>{post.data.title}</a></h2>
+                <h2>{post.data.title}</h2>
                 <img class="post-thumbnail" src={thumbnailFor(post)} alt="" loading="lazy" />
-              </article>
+              </a>
             ))}
           </div>
         </div>
@@ -119,8 +119,8 @@ const thumbnailFor = (post: (typeof posts)[number]) =>
   .category-member { --category-bg: #e3f2df; }
   .category-award { --category-bg: #f7dfc2; }
   .post-row h2 { margin: 0; font-size: clamp(16px, 1.5vw, 20px); font-weight: 600; line-height: 1.65; }
-  .post-row h2 a { transition: color .2s; }
-  .post-row:hover h2 a { color: #536ca9; }
+  .post-row h2 { transition: color .2s; }
+  .post-row:hover h2 { color: #536ca9; }
   .post-thumbnail { display: block; width: 220px; height: 120px; border-radius: 8px; object-fit: cover; }
 
   footer { padding: 36px 0; background: #151515; color: #b9c1ca; }
