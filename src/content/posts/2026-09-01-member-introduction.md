@@ -3,6 +3,7 @@ title: 研究室のメンバーを紹介します！
 date: 2026-09-01
 category: NEWS
 summary: 研究室に配属された3年生4名を紹介します！
+thumbnail: /images/posts/2026-09-01-member-introduction.jpg
 draft: false
 ---
 こんにちは。B3の小林です！

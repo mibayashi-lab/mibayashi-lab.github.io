@@ -3,6 +3,7 @@ title: 福田翔流さんがKYOTO PLATEAU HACK 2026でサギタリウス賞（�
 date: 2026-10-13
 category: AWARD
 summary: PLATEAUの3D都市モデル、オープンデータを用いて京都のコミュニティバス問題に取り組みました。
+thumbnail: /images/posts/2026-10-13-KYOTO-PLATEAU-HACK-2026.png
 draft: false
 ---
 福田です。<br>

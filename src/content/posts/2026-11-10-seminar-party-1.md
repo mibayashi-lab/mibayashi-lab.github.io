@@ -3,7 +3,7 @@ title: 第一回ゼミパーティを開催しました！
 date: 2026-11-10
 category: NEWS
 summary: 利きフライドポテトやゲームを通して親睦を深めました。
-thumbnail: None
+thumbnail: /images/posts/2026-11-10-seminar-party-1-potatoes.jpg
 draft: false
 ---
 

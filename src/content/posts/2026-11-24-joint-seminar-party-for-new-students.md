@@ -1,6 +1,7 @@
 ---
 title: 村尾ゼミと合同で新メンバー歓迎会を開催しました
 date: 2026-11-24
+thumbnail: /images/posts/2026-11-24-joint-seminar-party-for-new-students.jpg
 category: NEWS
 summary: 三林ゼミ・村尾ゼミ合同で、新メンバーの歓迎会を開催しました。
 draft: false
