@@ -3,7 +3,7 @@ title: iiWAS 2025でBest Paper Awardを受賞しました
 date: 2025-12-01
 category: AWARD
 summary: 日本語ライム生成に関する論文がiiWAS 2025のBest Paper Awardを受賞しました。
-thumbnail: /images/posts/thumb-iiwas-2025.svg
+thumbnail: /images/posts/thumb-iiwas-2025.png
 draft: false
 ---
 
