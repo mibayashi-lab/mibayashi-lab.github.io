@@ -134,14 +134,19 @@ const representativeThumbnailFor = (category: string) => `/images/posts/thumb-${
   @media (max-width: 900px) { nav a:not(.nav-contact) { display: none; } }
   @media (max-width: 640px) {
     .shell { width: min(calc(100% - 32px), var(--shell)); }
+    .header-inner { flex-wrap: wrap; gap: 12px; padding: 12px 0 10px; }
+    nav { width: 100%; gap: 16px; overflow-x: auto; padding-bottom: 4px; font-size: 13px; white-space: nowrap; }
+    nav a:not(.nav-contact) { display: block; }
+    nav .nav-contact { padding: 8px 11px; }
     .page-hero { min-height: 350px; }
     .hero-inner { padding-top: 68px; }
     .posts-section { padding: 60px 0 84px; }
     .posts-head { display: none; }
-    .post-row { grid-template-columns: 1fr auto; gap: 12px 18px; padding: 24px 4px; }
+    .post-row { grid-template-columns: minmax(0, 1fr) 96px; grid-template-areas: "date category" "title thumbnail"; gap: 12px 18px; padding: 24px 4px; }
+    .post-row time { grid-area: date; }
     .category { justify-self: end; }
-    .post-row h2 { grid-column: 1 / -1; }
-    .post-thumbnail { display: none; }
+    .post-row h2 { grid-area: title; align-self: start; }
+    .post-thumbnail { grid-area: thumbnail; display: block; width: 96px; height: 64px; border-radius: 6px; }
     .footer-inner { flex-direction: column; gap: 4px; }
   }
 </style>

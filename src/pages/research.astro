@@ -127,6 +127,10 @@ import { siteData } from '../data/site';
   @media (max-width: 900px) { nav a:not(.nav-contact) { display: none; } }
   @media (max-width: 720px) {
     .shell { width: min(calc(100% - 32px), var(--shell)); }
+    .header-inner { flex-wrap: wrap; gap: 12px; padding: 12px 0 10px; }
+    nav { width: 100%; gap: 16px; overflow-x: auto; padding-bottom: 4px; font-size: 13px; white-space: nowrap; }
+    nav a:not(.nav-contact) { display: block; }
+    nav .nav-contact { padding: 8px 11px; }
     .header-inner { min-height: 64px; }
     .page-content { padding-top: 36px; }
     .page-content > article { width: min(calc(100% - 32px), 1200px); }
