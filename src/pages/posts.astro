@@ -5,8 +5,7 @@ import { getCollection } from 'astro:content';
 const posts = (await getCollection('posts', ({ data }) => !data.draft))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 const formatPostDate = (date: Date) => date.toISOString().slice(0, 10);
-const thumbnailFor = (post: (typeof posts)[number]) =>
-  post.body.match(/!\[[^\]]*\]\(([^)]+)\)/)?.[1] ?? '/images/fav.jfif';
+const thumbnailFor = (post: (typeof posts)[number]) => post.body.match(/!\[[^\]]*\]\(([^)]+)\)/)?.[1];
 ---
 
 <!doctype html>
@@ -61,7 +60,16 @@ const thumbnailFor = (post: (typeof posts)[number]) =>
                 <time datetime={formatPostDate(post.data.date)}>{formatPostDate(post.data.date).replaceAll('-', '.')}</time>
                 <span class:list={['category', `category-${post.data.category.toLowerCase()}`]}>{post.data.category}</span>
                 <h2>{post.data.title}</h2>
-                <img class="post-thumbnail" src={thumbnailFor(post)} alt="" loading="lazy" />
+                {thumbnailFor(post) ? (
+                  <img class="post-thumbnail" src={thumbnailFor(post)} alt="" loading="lazy" />
+                ) : (
+                  <div class:list={['post-thumbnail', 'post-thumbnail-placeholder', `placeholder-${post.data.category.toLowerCase()}`]} aria-hidden="true">
+                    <span class="placeholder-orb"></span>
+                    <span class="placeholder-label">{post.data.category}</span>
+                    <strong>{post.data.title}</strong>
+                    <span class="placeholder-mark">MIBAYASHI LAB</span>
+                  </div>
+                )}
               </a>
             ))}
           </div>
@@ -122,6 +130,24 @@ const thumbnailFor = (post: (typeof posts)[number]) =>
   .post-row h2 { transition: color .2s; }
   .post-row:hover h2 { color: #536ca9; }
   .post-thumbnail { display: block; width: 220px; height: 120px; border-radius: 8px; object-fit: cover; }
+  .post-thumbnail-placeholder { position: relative; overflow: hidden; padding: 16px 18px; display: flex; flex-direction: column; justify-content: space-between; color: #17243b; background: linear-gradient(135deg, #edf3ff, #cbdcff); }
+  .post-thumbnail-placeholder::before { content: ''; position: absolute; width: 110px; height: 110px; right: -22px; top: -34px; border: 1px solid rgba(38,55,82,.26); border-radius: 50%; box-shadow: 0 0 0 14px rgba(255,255,255,.16), 0 0 0 28px rgba(38,55,82,.08); }
+  .post-thumbnail-placeholder::after { content: ''; position: absolute; width: 80px; height: 80px; right: 22px; bottom: -42px; border-radius: 50%; background: rgba(255,255,255,.42); }
+  .placeholder-orb { position: absolute; width: 34px; height: 34px; right: 22px; top: 26px; border-radius: 50%; background: rgba(255,255,255,.75); }
+  .placeholder-label, .placeholder-mark, .post-thumbnail-placeholder strong { position: relative; z-index: 1; }
+  .placeholder-label { width: max-content; padding: 4px 7px; background: rgba(255,255,255,.7); color: #425a87; font: 600 9px/1 var(--mono); letter-spacing: .08em; }
+  .post-thumbnail-placeholder strong { max-width: 165px; display: -webkit-box; overflow: hidden; font-size: 14px; line-height: 1.35; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+  .placeholder-mark { color: rgba(23,36,59,.58); font: 500 8px/1 var(--mono); letter-spacing: .1em; }
+  .placeholder-paper { background: linear-gradient(135deg, #fff4f3, #f2d5df); }
+  .placeholder-paper .placeholder-label { color: #92566d; }
+  .placeholder-member { background: linear-gradient(135deg, #edf7f2, #cde8dc); }
+  .placeholder-member .placeholder-label { color: #39715b; }
+  .placeholder-project { background: linear-gradient(135deg, #f0efff, #d8d4fb); }
+  .placeholder-project .placeholder-label { color: #5f59a2; }
+  .placeholder-award { background: linear-gradient(135deg, #fff8e8, #f3dfae); }
+  .placeholder-award .placeholder-label { color: #8d6b28; }
+  .placeholder-conf { background: linear-gradient(135deg, #eef7fa, #cce4ec); }
+  .placeholder-conf .placeholder-label { color: #3e7180; }
 
   footer { padding: 36px 0; background: #151515; color: #b9c1ca; }
   .footer-inner { display: flex; justify-content: space-between; gap: 24px; font-size: 13px; }
