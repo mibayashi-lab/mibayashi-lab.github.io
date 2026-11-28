@@ -7,7 +7,6 @@ thumbnail: /images/posts/thumb-nicograph-2025.png
 draft: false
 ---
 書道作品生成システムに関する共著論文がNICOGRAPH International 2025に採択されました。
-NICOGRAPH International 2025に、共著論文が採録されました。
 
 ## 採択論文
 
