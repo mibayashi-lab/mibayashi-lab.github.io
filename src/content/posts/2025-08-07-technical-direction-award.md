@@ -3,7 +3,7 @@ title: テクニカルディレクションアワードのAI部門でGoldを受�
 date: 2025-08-07
 category: AWARD
 summary: ラップバトル形式の議論生成システムがTech Direction AwardsのAI部門でGoldを受賞しました。
-thumbnail: /images/posts/technical-direction-award.jpg
+thumbnail: /images/posts/tech-direction-awards-ceremony.webp
 draft: false
 ---
 
