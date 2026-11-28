@@ -1,8 +1,8 @@
 ---
-title: 情報処理学会論文誌：データベース（TOD）に論文が採録されました
+title: 情報処理学会論文誌：データベース（TOD）19巻3号に論文が掲載されました
 date: 2026-04-15
 category: PAPER
-summary: 情報処理学会論文誌：データベース（TOD）に論文が採録されました
+summary: 情報処理学会論文誌：データベース（TOD）19巻3号に論文が掲載されました。
 thumbnail: None
 draft: false
 ---
