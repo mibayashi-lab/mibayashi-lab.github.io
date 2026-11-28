@@ -1,6 +1,6 @@
 ---
 title: 情報処理学会論文誌：データベース（TOD）19巻2号に論文が採録されました
-date: 2026-04-01
+date: 2026-04-21
 category: PAPER
 summary: 情報処理学会論文誌：データベース（TOD）19巻2号に論文が採録されました。
 thumbnail: None
